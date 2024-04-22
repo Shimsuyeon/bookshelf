@@ -4,7 +4,7 @@ import Content from "src/atoms/containers/content/Content";
 const MainPage = () => {
   return (
     <>
-      <Area backgroundColor={"#e7e8ff"}>
+      <Area backgroundColor={"#797aab"}>
         <Content></Content>
       </Area>
     </>
