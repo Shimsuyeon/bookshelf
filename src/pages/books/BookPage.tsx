@@ -1,10 +1,21 @@
 import { useRef } from "react";
-import { Canvas, useFrame, useLoader } from "react-three-fiber";
+import {
+  Canvas,
+  extend,
+  useFrame,
+  useLoader,
+  useThree,
+} from "@react-three/fiber";
+import { TextureLoader, Mesh } from "three";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import Area from "src/atoms/containers/area/Area";
 import Content from "src/atoms/containers/content/Content";
-import * as Three from "three";
-import { TextureLoader } from "three";
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
+
+// Extend OrbitControls into @react-three/fiber
+extend({ OrbitControls });
+
+// Type definitions for props or states can be defined here if needed
+// For example, define types for your image array or any props you expect to receive
 
 const BookPage = () => {
   return (
@@ -20,7 +31,8 @@ const BookPage = () => {
             }}
           >
             <ambientLight />
-            <pointLight position={[200, 200, 200]} />
+            <pointLight position={[-20, 200, 200]} />
+            <Controls />
             <BookMesh />
           </Canvas>
         </Content>
@@ -30,10 +42,10 @@ const BookPage = () => {
 };
 
 const BookMesh = () => {
-  const boxRef = useRef<Three.Mesh>(null);
+  const boxRef = useRef<Mesh>(null);
   const images = [
     "/images/front.png",
-    "/images/spine.png", // 여기에 이미지 URL 입력
+    "/images/spine.png",
     "/images/back.png",
     "/images/papers.jpg",
   ];
@@ -42,14 +54,13 @@ const BookMesh = () => {
 
   useFrame(() => {
     if (boxRef.current) {
-      //boxRef.current.rotation.x += 0.005;
       boxRef.current.rotation.y += 0.005;
     }
   });
 
   return (
     <mesh ref={boxRef}>
-      <boxGeometry args={[5, 10, 0.8]} />
+      <boxGeometry args={[5, 8, 0.8]} />
       <meshStandardMaterial attach="material-0" map={textures[3]} />
       <meshStandardMaterial attach="material-1" map={textures[1]} />
       <meshStandardMaterial attach="material-2" map={textures[3]} />
@@ -58,6 +69,11 @@ const BookMesh = () => {
       <meshStandardMaterial attach="material-5" map={textures[2]} />
     </mesh>
   );
+};
+
+const Controls = () => {
+  const { camera, gl } = useThree();
+  return <orbitControls args={[camera, gl.domElement]} />;
 };
 
 export default BookPage;
