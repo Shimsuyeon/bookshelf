@@ -10,6 +10,7 @@ import { TextureLoader, Mesh } from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import Area from "src/atoms/containers/area/Area";
 import Content from "src/atoms/containers/content/Content";
+import { useNavigate } from "react-router-dom";
 
 // Extend OrbitControls into @react-three/fiber
 extend({ OrbitControls });
@@ -25,8 +26,8 @@ const BookPage = () => {
           <Canvas
             camera={{ position: [-20, 0, 0], fov: 45 }}
             style={{
-              width: "1000px",
-              height: "1000px",
+              width: "1400px",
+              height: "1080px",
               backgroundColor: "#f0f0f0",
             }}
           >
@@ -51,16 +52,19 @@ const BookMesh = () => {
   ];
 
   const textures = useLoader(TextureLoader, images);
-
+  const navigate = useNavigate();
+  const move = () => {
+    navigate("/");
+  };
   useFrame(() => {
     if (boxRef.current) {
-      boxRef.current.rotation.y += 0.005;
+      boxRef.current.rotation.y += 0.0008;
     }
   });
 
   return (
-    <mesh ref={boxRef}>
-      <boxGeometry args={[5, 8, 0.8]} />
+    <mesh ref={boxRef} onClick={move}>
+      <boxGeometry args={[5, 8, 0.6]} />
       <meshStandardMaterial attach="material-0" map={textures[3]} />
       <meshStandardMaterial attach="material-1" map={textures[1]} />
       <meshStandardMaterial attach="material-2" map={textures[3]} />
