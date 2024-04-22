@@ -11,11 +11,11 @@ const BookShelfPage = () => {
           <Book
             bookCovers={{
               edge: "",
-              spine: "./assets/spine.jpeg",
+              spine: "/image/spine.jpeg",
               top: "",
               bottom: "",
-              front: "./assets/front.jpeg",
-              back: "./assets/front.jpeg",
+              front: "/image/spine.jpeg",
+              back: "./image/spine.jpeg",
             }}
             style={{
               width: 500,
