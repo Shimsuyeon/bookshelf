@@ -1,4 +1,3 @@
-import { useRef } from "react";
 import {
   Canvas,
   extend,
@@ -6,11 +5,15 @@ import {
   useLoader,
   useThree,
 } from "@react-three/fiber";
-import { TextureLoader, Mesh } from "three";
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import Area from "src/atoms/containers/area/Area";
 import Content from "src/atoms/containers/content/Content";
-import { useNavigate } from "react-router-dom";
+import Flex from "src/atoms/containers/flex/Flex";
+import Text from "src/atoms/text/Text";
+import Font from "src/styles/fonts";
+import { Mesh, TextureLoader } from "three";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
 // Extend OrbitControls into @react-three/fiber
 extend({ OrbitControls });
@@ -21,21 +24,43 @@ extend({ OrbitControls });
 const BookPage = () => {
   return (
     <>
-      <Area>
+      <Area backgroundColor="#3b3b3b">
         <Content>
-          <Canvas
-            camera={{ position: [-20, 0, 0], fov: 45 }}
+          <Flex
             style={{
-              width: "1400px",
-              height: "1080px",
-              backgroundColor: "#f0f0f0",
+              zIndex: 2,
+              position: "absolute",
+              left: "50%",
+              top: "20px",
+              width: "100%",
             }}
           >
-            <ambientLight />
-            <pointLight position={[-20, 200, 200]} />
-            <Controls />
-            <BookMesh />
-          </Canvas>
+            <Text
+              font={Font.Mapo}
+              style={{
+                textAlign: "center",
+                color: "white",
+                fontSize: "25px",
+              }}
+            >
+              책을 클릭해보세요
+            </Text>
+          </Flex>
+          <Flex style={{ zIndex: -1 }}>
+            <Canvas
+              camera={{ position: [-20, 0, 0], fov: 45 }}
+              style={{
+                width: "1400px",
+                height: "1080px",
+                backgroundColor: "#3b3b3b",
+              }}
+            >
+              <ambientLight />
+              <pointLight position={[-20, 200, 200]} />
+              <Controls />
+              <BookMesh />
+            </Canvas>
+          </Flex>
         </Content>
       </Area>
     </>
@@ -54,7 +79,7 @@ const BookMesh = () => {
   const textures = useLoader(TextureLoader, images);
   const navigate = useNavigate();
   const move = () => {
-    navigate("/");
+    navigate("/bookdetail");
   };
   useFrame(() => {
     if (boxRef.current) {

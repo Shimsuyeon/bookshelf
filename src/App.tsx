@@ -6,8 +6,8 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
-import Area from "./atoms/containers/area/Area";
-import Content from "./atoms/containers/content/Content";
+//import path from "path";
+import BookDetailPage from "./pages/bookDetail/BookDetailPage";
 import BookPage from "./pages/books/BookPage";
 import BookshelfPage from "./pages/bookshelf/BookshelfPage";
 import MainPage from "./pages/main/MainPage";
@@ -21,20 +21,13 @@ const router = createBrowserRouter(
       <Route path={Paths.main} element={<MainPage />} />,
       <Route path={Paths.bookshelf} element={<BookshelfPage />} />,
       <Route path={Paths.books} element={<BookPage />} />,
+      <Route path={Paths.bookdetail} element={<BookDetailPage />} />,
     </Route>,
   ),
 );
 
 function App() {
-  return (
-    <>
-      <Area>
-        <Content>
-          <RouterProvider router={router} />
-        </Content>
-      </Area>
-    </>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
