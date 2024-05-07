@@ -10,7 +10,9 @@ import {
 import BookDetailPage from "./pages/bookDetail/BookDetailPage";
 import BookPage from "./pages/books/BookPage";
 import BookshelfPage from "./pages/bookshelf/BookshelfPage";
+import FirstStoryPage from "./pages/firstStory/FirstStoryPage";
 import MainPage from "./pages/main/MainPage";
+import PostBoard from "./pages/postBoard/PostBoard";
 import Layout from "./template/layout/Layout";
 import Paths from "./types/paths";
 
@@ -22,6 +24,8 @@ const router = createBrowserRouter(
       <Route path={Paths.bookshelf} element={<BookshelfPage />} />,
       <Route path={Paths.books} element={<BookPage />} />,
       <Route path={Paths.bookdetail} element={<BookDetailPage />} />,
+      <Route path={Paths.firstStory} element={<FirstStoryPage />} />,
+      <Route path={Paths.post} element={<PostBoard />} />,
     </Route>,
   ),
 );

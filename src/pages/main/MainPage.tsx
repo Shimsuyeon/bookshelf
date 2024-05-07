@@ -1,5 +1,3 @@
-import "./main.css";
-
 import { useNavigate } from "react-router-dom";
 import Button from "src/atoms/button/Button";
 import Area from "src/atoms/containers/area/Area";

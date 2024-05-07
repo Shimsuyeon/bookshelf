@@ -35,7 +35,7 @@ const BookDetailPage = () => {
   return (
     <Area backgroundColor="#3b3b3b">
       <Content>
-        <Spacer height={"500px"} />
+        <Spacer height={"600px"} />
         {/* 스크롤에 따라 텍스트의 가시성을 조절합니다. */}
         {isVisible && (
           <Text color="white" textAlign="center" size="35px" font={Font.Mapo}>
@@ -43,6 +43,7 @@ const BookDetailPage = () => {
           </Text>
         )}
         <Spacer height={"1000px"} />
+
         <div className="rootbook">
           <div className="bodybook">
             <div className="cover">
