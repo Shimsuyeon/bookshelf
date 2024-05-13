@@ -1,13 +1,13 @@
+import Flex from "src/atoms/containers/flex/Flex";
 import Icons from "src/atoms/icon/Icon";
+import Image from "src/atoms/image/Image";
 import Spacer from "src/atoms/spacer/Spacer";
 import Text from "src/atoms/text/Text";
 import { useScrollFadeIn } from "src/hooks/useScrollFade";
 import Font from "src/styles/fonts";
 import styled from "styled-components";
-import Roll from "./assets/roll.png";
-import Image from "src/atoms/image/Image";
-import Flex from "src/atoms/containers/flex/Flex";
-import Roll2 from "./assets/roll2.png";
+
+import Roll3 from "./assets/roll3.png";
 const SectionContainerCol = styled.div`
   width: 100%;
   min-height: calc(100vh - 64px); // 전체화면시 약 700px?
@@ -70,7 +70,7 @@ const Roll0 = ({ innerRefArr }: Roll1Props) => {
       </Text>
       <Spacer height={"50px"} />
       <Image
-        src={Roll2}
+        src={Roll3}
         width={250}
         ref={animatedItem[2].ref as React.RefObject<HTMLImageElement>}
         style={animatedItem[2].style}
