@@ -11,6 +11,7 @@ import { useNavigate } from "react-router-dom";
 import Area from "src/atoms/containers/area/Area";
 import Content from "src/atoms/containers/content/Content";
 import Flex from "src/atoms/containers/flex/Flex";
+import Spacer from "src/atoms/spacer/Spacer";
 import Text from "src/atoms/text/Text";
 import Font from "src/styles/fonts";
 import { Mesh, TextureLoader } from "three";
@@ -28,15 +29,15 @@ const BookPage = () => {
               zIndex: 2,
               position: "absolute",
               left: "50%",
-              top: "20px",
+              top: "100px",
               width: "100%",
             }}
           >
             <Text
               font={Font.Mapo}
+              color={"black"}
               style={{
                 textAlign: "center",
-                color: "white",
                 fontSize: "25px",
               }}
             >

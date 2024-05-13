@@ -6,6 +6,7 @@ enum Paths {
   firstStory = "/firstStory",
   post = "/post",
   booklist = "/booklist",
+  bookinfo = "/bookinfo",
 }
 
 export default Paths;

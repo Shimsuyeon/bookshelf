@@ -8,6 +8,7 @@ import {
 
 //import path from "path";
 import BookDetailPage from "./pages/bookDetail/BookDetailPage";
+import BookInfoPage from "./pages/bookInfo/BookInfoPage";
 import BookListPage from "./pages/bookList/BookList";
 import BookPage from "./pages/books/BookPage";
 import BookshelfPage from "./pages/bookshelf/BookshelfPage";
@@ -28,6 +29,7 @@ const router = createBrowserRouter(
       <Route path={Paths.firstStory} element={<FirstStoryPage />} />,
       <Route path={Paths.post} element={<PostBoard />} />,
       <Route path={Paths.booklist} element={<BookListPage />} />,
+      <Route path={Paths.bookinfo} element={<BookInfoPage />} />,
     </Route>,
   ),
 );
