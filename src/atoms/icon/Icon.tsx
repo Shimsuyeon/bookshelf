@@ -28,6 +28,32 @@ const Quote = ({ size = 30, style, color = "black" }: IconsProps) => {
   );
 };
 
+const Stars = ({ size = 30, style, color = "black" }: IconsProps) => {
+  return (
+    <svg
+      width={size}
+      viewBox="0 0 63 27"
+      fill="none"
+      style={style}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M31.5 0L34.0774 10.9226L45 13.5L34.0774 16.0774L31.5 27L28.9226 16.0774L18 13.5L28.9226 10.9226L31.5 0Z"
+        fill={color}
+      />
+      <path
+        d="M56.5 7L57.741 12.259L63 13.5L57.741 14.741L56.5 20L55.259 14.741L50 13.5L55.259 12.259L56.5 7Z"
+        fill={color}
+      />
+      <path
+        d="M6.5 7L7.74097 12.259L13 13.5L7.74097 14.741L6.5 20L5.25903 14.741L0 13.5L5.25903 12.259L6.5 7Z"
+        fill={color}
+      />
+    </svg>
+  );
+};
+
 Icons.Quote = Quote;
+Icons.Stars = Stars;
 
 export default Icons;

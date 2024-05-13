@@ -7,6 +7,7 @@ enum Paths {
   post = "/post",
   booklist = "/booklist",
   bookinfo = "/bookinfo",
+  bookRoll = "/book/story/roll",
 }
 
 export default Paths;

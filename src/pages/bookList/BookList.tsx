@@ -53,7 +53,7 @@ const BookListPage = () => {
                 1. 책 소개_지스트의 온도
               </Text>
             </Button>
-            <Button>
+            <Button onClick={() => navigate("/book/story/roll")}>
               <Text
                 font={Font.Mapo}
                 size="1.8rem"
