@@ -1,3 +1,4 @@
+import { OrbitControls } from "@react-three/drei";
 import {
   Canvas,
   extend,
@@ -13,18 +14,14 @@ import Flex from "src/atoms/containers/flex/Flex";
 import Text from "src/atoms/text/Text";
 import Font from "src/styles/fonts";
 import { Mesh, TextureLoader } from "three";
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
 // Extend OrbitControls into @react-three/fiber
 extend({ OrbitControls });
 
-// Type definitions for props or states can be defined here if needed
-// For example, define types for your image array or any props you expect to receive
-
 const BookPage = () => {
   return (
     <>
-      <Area backgroundColor="#3b3b3b">
+      <Area backgroundColor="#fffff0">
         <Content>
           <Flex
             style={{
@@ -52,7 +49,7 @@ const BookPage = () => {
               style={{
                 width: "1400px",
                 height: "1080px",
-                backgroundColor: "#3b3b3b",
+                backgroundColor: "#fffff0",
               }}
             >
               <ambientLight />
@@ -79,7 +76,7 @@ const BookMesh = () => {
   const textures = useLoader(TextureLoader, images);
   const navigate = useNavigate();
   const move = () => {
-    navigate("/bookdetail");
+    navigate("/booklist");
   };
   useFrame(() => {
     if (boxRef.current) {
@@ -102,7 +99,8 @@ const BookMesh = () => {
 
 const Controls = () => {
   const { camera, gl } = useThree();
-  return <orbitControls args={[camera, gl.domElement]} />;
+  // No longer ignore TypeScript, corrected component name
+  return <OrbitControls args={[camera, gl.domElement]} />;
 };
 
 export default BookPage;

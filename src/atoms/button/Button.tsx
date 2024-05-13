@@ -10,6 +10,7 @@ export enum ButtonVariant {
   navbar = "navbar",
   navbarChild = "navbarChild",
   taskItem = "taskItem",
+  postItem = "postItem",
 }
 
 interface ButtonProps {
@@ -88,6 +89,17 @@ const Button = styled.button<ButtonProps>`
           :hover {
             box-shadow: inset rgba(0, 0, 0, 0.15) 0px 0px 0px 40px;
             border: 1px solid ${colorSet.outlines};
+          }
+        `;
+      case ButtonVariant.postItem:
+        return css`
+          border: 2px solid ${colorSet.outlines};
+          color: black;
+          padding: 10px;
+          background-color: #fffff0;
+          border-radius: 20px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          :hover {
           }
         `;
     }

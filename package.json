@@ -10,7 +10,8 @@
     "lint": "eslint src/"
   },
   "dependencies": {
-    "@react-three/fiber": "^8.16.2",
+    "@react-three/drei": "^9.105.6",
+    "@react-three/fiber": "^8.16.6",
     "@tanstack/react-query": "^5.35.1",
     "axios": "^1.6.8",
     "i18next": "^23.7.16",
