@@ -6,6 +6,8 @@ import Font from "src/styles/fonts";
 import styled from "styled-components";
 import Roll from "./assets/roll.png";
 import Image from "src/atoms/image/Image";
+import Flex from "src/atoms/containers/flex/Flex";
+import Roll2 from "./assets/roll2.png";
 const SectionContainerCol = styled.div`
   width: 100%;
   min-height: calc(100vh - 64px); // 전체화면시 약 700px?
@@ -18,10 +20,10 @@ const SectionContainerCol = styled.div`
 interface Roll1Props {
   innerRefArr: React.MutableRefObject<HTMLElement[]>;
 }
-const Roll2 = ({ innerRefArr }: Roll1Props) => {
+const Roll0 = ({ innerRefArr }: Roll1Props) => {
   const animatedItem = {
-    0: useScrollFadeIn("left", 2.3, 0),
-    1: useScrollFadeIn("leftUp", 2.3, 0.5),
+    0: useScrollFadeIn("down", 1.7, 0),
+    1: useScrollFadeIn("up", 2.3, 0.5),
     2: useScrollFadeIn("left", 2.3, 1),
     3: useScrollFadeIn("right", 2.3, 1.5),
   };
@@ -29,50 +31,52 @@ const Roll2 = ({ innerRefArr }: Roll1Props) => {
     <SectionContainerCol
       style={{
         paddingBlock: "0px",
-        minHeight: "70vh",
+        minHeight: "90vh",
       }}
       ref={(el: HTMLDivElement | null) => {
         if (el !== null) {
-          innerRefArr.current[2] = el;
+          innerRefArr.current[0] = el;
         }
       }}
     >
-      <Icons.Stars size={50} />
       <Spacer height={"100px"} />
-      <Text
-        font={Font.Mapo}
-        size={"1.2rem"}
-        ref={animatedItem[0].ref as React.RefObject<HTMLParagraphElement>}
-        style={animatedItem[0].style}
-      >
-        아무에게도 해를 끼치지 않고
-      </Text>
+      <Flex flexDirection="column" width="400px">
+        <div style={{ textAlign: "left", width: "100%" }}>
+          <Icons.Quote style={{ transform: "scaleX(-1)" }} />
+        </div>
+        <Spacer height={"10px"} />
+        <Text
+          font={Font.Mapo}
+          size={"2.5rem"}
+          ref={animatedItem[0].ref as React.RefObject<HTMLParagraphElement>}
+          style={animatedItem[0].style}
+          textAlign="center"
+        >
+          앞구르기
+        </Text>
+        <Spacer height={"10px"} />
+        <div style={{ textAlign: "right", width: "100%" }}>
+          <Icons.Quote />
+        </div>
+      </Flex>
       <Spacer height={"50px"} />
       <Text
         font={Font.Mapo}
-        size={"1.2rem"}
+        size={"1.5rem"}
         ref={animatedItem[1].ref as React.RefObject<HTMLParagraphElement>}
         style={animatedItem[1].style}
       >
-        세상을 한 바퀴 뒤집었다 되돌렸다는 것이
-      </Text>
-      <Spacer height={"50px"} />
-      <Text
-        font={Font.Mapo}
-        size={"1.2rem"}
-        ref={animatedItem[2].ref as React.RefObject<HTMLParagraphElement>}
-        style={animatedItem[2].style}
-      >
-        마음에 들었다.
+        김현아
       </Text>
       <Spacer height={"50px"} />
       <Image
-        src={Roll}
-        width="200px"
-        ref={animatedItem[3].ref as React.RefObject<HTMLImageElement>}
-        style={animatedItem[3].style}
+        src={Roll2}
+        width={250}
+        ref={animatedItem[2].ref as React.RefObject<HTMLImageElement>}
+        style={animatedItem[2].style}
       />
+      <Spacer height={"50px"} />
     </SectionContainerCol>
   );
 };
-export default Roll2;
+export default Roll0;

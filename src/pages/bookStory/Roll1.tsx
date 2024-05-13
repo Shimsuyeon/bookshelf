@@ -36,29 +36,13 @@ const Roll1 = ({ innerRefArr }: Roll1Props) => {
       }}
       ref={(el: HTMLDivElement | null) => {
         if (el !== null) {
-          innerRefArr.current[0] = el;
+          innerRefArr.current[1] = el;
         }
       }}
     >
-      <Flex flexDirection="column" width="400px">
-        <div style={{ textAlign: "left", width: "100%" }}>
-          <Icons.Quote style={{ transform: "scaleX(-1)" }} />
-        </div>
-        <Spacer height={"10px"} />
-        <Text
-          font={Font.Mapo}
-          size={"2.5rem"}
-          ref={animatedItem0.ref as React.RefObject<HTMLParagraphElement>}
-          style={animatedItem0.style}
-          textAlign="center"
-        >
-          앞구르기
-        </Text>
-        <Spacer height={"10px"} />
-        <div style={{ textAlign: "right", width: "100%" }}>
-          <Icons.Quote />
-        </div>
-      </Flex>
+      <Spacer height={"100px"} />
+      <Icons.Stars size={50} />
+
       <Spacer height={"100px"} />
       <Text
         font={Font.Mapo}
@@ -86,6 +70,7 @@ const Roll1 = ({ innerRefArr }: Roll1Props) => {
       >
         나에게 앞구르기는 세상과 교감하는 하나의 방법이다.
       </Text>
+      <Spacer height={"200px"} />
     </SectionContainerCol>
   );
 };
