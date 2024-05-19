@@ -9,6 +9,7 @@ import Text from "src/atoms/text/Text";
 import { useScrollFadeIn } from "src/hooks/useScrollFade";
 import Photo from "src/pages/bookList/assets/Photo.png";
 import Font from "src/styles/fonts";
+import Paths from "src/types/paths";
 type ScrollFadeInProps = {
   ref: React.RefObject<HTMLElement>;
   style: React.CSSProperties;
@@ -16,6 +17,7 @@ type ScrollFadeInProps = {
 
 const BookListPage = () => {
   const animatedItem0: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 0);
+  const animatedItem01: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 0.3);
   const animatedItem1: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 0.5);
   const animatedItem2: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 1);
   const animatedItem3: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 1.3);
@@ -42,8 +44,20 @@ const BookListPage = () => {
             >
               목차
             </Text>
-            <Spacer height={"30px"} />
-            <Button onClick={() => navigate("/bookinfo")}>
+            <Spacer height={"20px"} />
+            <Button onClick={() => navigate(Paths.projectInfo)}>
+              <Text
+                font={Font.Mapo}
+                size="1.8rem"
+                ref={
+                  animatedItem01.ref as React.RefObject<HTMLParagraphElement>
+                }
+                style={animatedItem01.style}
+              >
+                0. 프로젝트 소개
+              </Text>
+            </Button>
+            <Button onClick={() => navigate(Paths.bookinfo)}>
               <Text
                 font={Font.Mapo}
                 size="1.8rem"
@@ -53,7 +67,7 @@ const BookListPage = () => {
                 1. 책 소개_지스트의 온도
               </Text>
             </Button>
-            <Button onClick={() => navigate("/book/story/roll")}>
+            <Button onClick={() => navigate(Paths.bookRoll)}>
               <Text
                 font={Font.Mapo}
                 size="1.8rem"

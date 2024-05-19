@@ -16,6 +16,7 @@ import BookStoryRoll from "./pages/bookStory/BookStoryRoll";
 import FirstStoryPage from "./pages/firstStory/FirstStoryPage";
 import MainPage from "./pages/main/MainPage";
 import PostBoard from "./pages/postBoard/PostBoard";
+import ProjectInfoPage from "./pages/projectInfo/ProjectInfo";
 import Layout from "./template/layout/Layout";
 import Paths from "./types/paths";
 
@@ -32,6 +33,7 @@ const router = createBrowserRouter(
       <Route path={Paths.booklist} element={<BookListPage />} />,
       <Route path={Paths.bookinfo} element={<BookInfoPage />} />,
       <Route path={Paths.bookRoll} element={<BookStoryRoll />} />,
+      <Route path={Paths.projectInfo} element={<ProjectInfoPage />} />,
     </Route>,
   ),
 );

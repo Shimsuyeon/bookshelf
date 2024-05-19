@@ -7,7 +7,7 @@ import Roll0 from "./Roll0";
 import Roll1 from "./Roll1";
 import Roll2 from "./Roll2";
 
-const BookStoryRoll = () => {
+const BookStoryEducation = () => {
   const secRefArr = useRef([]);
   return (
     <Area backgroundColor="#fffff0">
@@ -23,4 +23,4 @@ const BookStoryRoll = () => {
   );
 };
 
-export default BookStoryRoll;
+export default BookStoryEducation;
