@@ -1,4 +1,3 @@
-import Flex from "src/atoms/containers/flex/Flex";
 import Icons from "src/atoms/icon/Icon";
 import Image from "src/atoms/image/Image";
 import Spacer from "src/atoms/spacer/Spacer";
@@ -7,7 +6,7 @@ import { useScrollFadeIn } from "src/hooks/useScrollFade";
 import Font from "src/styles/fonts";
 import styled from "styled-components";
 
-import Edu from "./assets/Edu2.png";
+import Burn from "./assets/Burn1.png";
 const SectionContainerCol = styled.div`
   width: 100%;
   min-height: calc(100vh - 64px); // 전체화면시 약 700px?
@@ -25,7 +24,7 @@ type ScrollFadeInProps = {
 interface Roll1Props {
   innerRefArr: React.MutableRefObject<HTMLElement[]>;
 }
-const Edu1 = ({ innerRefArr }: Roll1Props) => {
+const Burn1 = ({ innerRefArr }: Roll1Props) => {
   const animatedItem0: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 0);
   const animatedItem1: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 0.5);
   const animatedItem2: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 1);
@@ -53,7 +52,7 @@ const Edu1 = ({ innerRefArr }: Roll1Props) => {
         ref={animatedItem0.ref as React.RefObject<HTMLParagraphElement>}
         style={animatedItem0.style}
       >
-        교육봉사와 멘토링을 반복할수록 나는
+        두 학기 동안 나는 &apos;잠이 드는 것&apos;을 무서워했다.
       </Text>
       <Spacer height={"20px"} />
       <Text
@@ -62,7 +61,7 @@ const Edu1 = ({ innerRefArr }: Roll1Props) => {
         ref={animatedItem1.ref as React.RefObject<HTMLParagraphElement>}
         style={animatedItem1.style}
       >
-        멘티에게 배울 점이 많다는 것을
+        잠드는 게 무서워 잠을 잘 자지 못하다보니 하루 종일 피곤했고
       </Text>
       <Spacer height={"20px"} />
       <Text
@@ -71,11 +70,11 @@ const Edu1 = ({ innerRefArr }: Roll1Props) => {
         ref={animatedItem2.ref as React.RefObject<HTMLParagraphElement>}
         style={animatedItem2.style}
       >
-        더 선명하게 느끼게 됐다.
+        피로를 이겨내려 카페인 음료를 최소 두 잔씩 마셨다.
       </Text>
       <Spacer height={"20px"} />
       <Image
-        src={Edu}
+        src={Burn}
         width={200}
         ref={animatedItem3.ref as React.RefObject<HTMLImageElement>}
         style={animatedItem3.style}
@@ -84,4 +83,4 @@ const Edu1 = ({ innerRefArr }: Roll1Props) => {
     </SectionContainerCol>
   );
 };
-export default Edu1;
+export default Burn1;

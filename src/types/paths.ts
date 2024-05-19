@@ -9,6 +9,8 @@ enum Paths {
   bookinfo = "/book/story/info",
   bookRoll = "/book/story/roll",
   projectInfo = "/book/story/project",
+  bookEdu = "/book/story/edu",
+  bookBurnout = "/book/story/burnout",
 }
 
 export default Paths;

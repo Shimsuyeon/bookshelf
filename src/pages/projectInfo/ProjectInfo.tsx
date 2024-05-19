@@ -54,8 +54,7 @@ const ProjectInfoPage = () => {
           ref={animatedItem1.ref as React.RefObject<HTMLParagraphElement>}
           style={animatedItem1.style}
         >
-          이 프로젝트는 소설의 구절을 짧은 글과 그림, 그리고 생동감 있는 CSS
-          효과로 표현합니다.
+          이 프로젝트는 소설의 구절을 짧은 글과 그림,
         </Text>
         <Spacer height={"20px"} />
         <Text
@@ -64,8 +63,7 @@ const ProjectInfoPage = () => {
           ref={animatedItem2.ref as React.RefObject<HTMLParagraphElement>}
           style={animatedItem2.style}
         >
-          문학을 새로운 시각으로 경험하고, 작가의 의도를 더 깊게 이해할 수
-          있습니다.
+          그리고 애니메이션으로 표현했습니다.
         </Text>
         <Spacer height={"20px"} />
         <Text
@@ -74,8 +72,7 @@ const ProjectInfoPage = () => {
           ref={animatedItem3.ref as React.RefObject<HTMLParagraphElement>}
           style={animatedItem3.style}
         >
-          책 '지스트의 온도'의 문장을 시각적으로 경험하며 상상의 폭을
-          넓혀보세요.
+          책 '지스트의 온도'의 문장을 시각적으로 경험하며,
         </Text>
         <Spacer height={"20px"} />
         <Text
@@ -84,8 +81,7 @@ const ProjectInfoPage = () => {
           ref={animatedItem4.ref as React.RefObject<HTMLParagraphElement>}
           style={animatedItem4.style}
         >
-          글과 그래픽, 애니메이션을 통해 새로운 문학의 깊이를 경험할 수
-          있습니다.
+          작가의 의도를 새로운 시선으로 느껴보세요.
         </Text>
 
         <Spacer height={"20px"} />

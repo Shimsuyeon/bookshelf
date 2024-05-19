@@ -6,8 +6,10 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
+import BookStoryBurnout from "./pages/bookBurnout/BookStoryBurnout";
 //import path from "path";
 import BookDetailPage from "./pages/bookDetail/BookDetailPage";
+import BookStoryEducation from "./pages/bookEducation/BookStoryRoll";
 import BookInfoPage from "./pages/bookInfo/BookInfoPage";
 import BookListPage from "./pages/bookList/BookList";
 import BookPage from "./pages/books/BookPage";
@@ -34,6 +36,8 @@ const router = createBrowserRouter(
       <Route path={Paths.bookinfo} element={<BookInfoPage />} />,
       <Route path={Paths.bookRoll} element={<BookStoryRoll />} />,
       <Route path={Paths.projectInfo} element={<ProjectInfoPage />} />,
+      <Route path={Paths.bookEdu} element={<BookStoryEducation />} />,
+      <Route path={Paths.bookBurnout} element={<BookStoryBurnout />} />,
     </Route>,
   ),
 );

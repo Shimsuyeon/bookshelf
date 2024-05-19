@@ -8,7 +8,7 @@ import { useScrollFadeIn } from "src/hooks/useScrollFade";
 import Font from "src/styles/fonts";
 import styled from "styled-components";
 
-import Edu from "./assets/Edu3.png";
+import Burn from "./assets/Burn2.png";
 const SectionContainerCol = styled.div`
   width: 100%;
   min-height: calc(100vh - 64px); // 전체화면시 약 700px?
@@ -21,7 +21,7 @@ const SectionContainerCol = styled.div`
 interface Roll1Props {
   innerRefArr: React.MutableRefObject<HTMLElement[]>;
 }
-const Roll2 = ({ innerRefArr }: Roll1Props) => {
+const Burn2 = ({ innerRefArr }: Roll1Props) => {
   const animatedItem = {
     0: useScrollFadeIn("left", 2.3, 0),
     1: useScrollFadeIn("leftUp", 2.3, 0.5),
@@ -50,7 +50,7 @@ const Roll2 = ({ innerRefArr }: Roll1Props) => {
         ref={animatedItem[0].ref as React.RefObject<HTMLParagraphElement>}
         style={animatedItem[0].style}
       >
-        지식은 일방적으로 주는 것이 아닌 나누는 것이다.
+        나를 번아웃에서 구해준 것은 &apos;시 짓기&apos;였다.
       </Text>
       <Spacer height={"50px"} />
       <Text
@@ -59,7 +59,7 @@ const Roll2 = ({ innerRefArr }: Roll1Props) => {
         ref={animatedItem[1].ref as React.RefObject<HTMLParagraphElement>}
         style={animatedItem[1].style}
       >
-        로에게 선한 영향을 주고 성장해 나가는 좋은 계기이다.
+        내 안의 어떤 부정적인 것들을 시에 쏟아붓고 나면,
       </Text>
       <Spacer height={"50px"} />
       <Text
@@ -68,11 +68,11 @@ const Roll2 = ({ innerRefArr }: Roll1Props) => {
         ref={animatedItem[2].ref as React.RefObject<HTMLParagraphElement>}
         style={animatedItem[2].style}
       >
-        나는 모두에게 교육봉사 참여를 권하고 싶다.
+        그러면 살 수 있을 것 같은 느낌이 들었다.
       </Text>
       <Spacer height={"50px"} />
       <Image
-        src={Edu}
+        src={Burn}
         width="200px"
         ref={animatedItem[3].ref as React.RefObject<HTMLImageElement>}
         style={animatedItem[3].style}
@@ -92,4 +92,4 @@ const Roll2 = ({ innerRefArr }: Roll1Props) => {
     </SectionContainerCol>
   );
 };
-export default Roll2;
+export default Burn2;

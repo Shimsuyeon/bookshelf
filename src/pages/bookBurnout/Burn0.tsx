@@ -7,7 +7,7 @@ import { useScrollFadeIn } from "src/hooks/useScrollFade";
 import Font from "src/styles/fonts";
 import styled from "styled-components";
 
-import Edu from "./assets/Edu1.png";
+import Burn from "./assets/Burn0.png";
 const SectionContainerCol = styled.div`
   width: 100%;
   min-height: calc(100vh - 64px); // 전체화면시 약 700px?
@@ -52,7 +52,7 @@ const Edu0 = ({ innerRefArr }: Roll1Props) => {
           style={animatedItem[0].style}
           textAlign="center"
         >
-          당신이 교육봉사를 해야 하는 이유
+          번아웃과 시 창작
         </Text>
         <Spacer height={"10px"} />
         <div style={{ textAlign: "right", width: "100%" }}>
@@ -66,11 +66,11 @@ const Edu0 = ({ innerRefArr }: Roll1Props) => {
         ref={animatedItem[1].ref as React.RefObject<HTMLParagraphElement>}
         style={animatedItem[1].style}
       >
-        심수연
+        김현아
       </Text>
       <Spacer height={"50px"} />
       <Image
-        src={Edu}
+        src={Burn}
         width={250}
         ref={animatedItem[2].ref as React.RefObject<HTMLImageElement>}
         style={animatedItem[2].style}

@@ -54,3 +54,10 @@ export interface Post {
   content: string;
   created_at: string;
 }
+
+export interface PostResponse {
+  email: string;
+  name: string;
+  password: string;
+  content: string;
+}

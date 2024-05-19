@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "src/atoms/button/Button";
 import Area from "src/atoms/containers/area/Area";
@@ -25,6 +26,10 @@ const BookListPage = () => {
   const animatedItem5: ScrollFadeInProps = useScrollFadeIn("down", 1.7, 0.5);
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <Area backgroundColor="#fffff0">
       <Content>
@@ -77,7 +82,7 @@ const BookListPage = () => {
                 2. 앞구르기_김현아
               </Text>
             </Button>
-            <Button>
+            <Button onClick={() => navigate(Paths.bookEdu)}>
               <Text
                 font={Font.Mapo}
                 size="1.8rem"
@@ -87,14 +92,14 @@ const BookListPage = () => {
                 3. 당신이 교육봉사를 해야 하는 이유_심수연
               </Text>
             </Button>
-            <Button>
+            <Button onClick={() => navigate(Paths.bookBurnout)}>
               <Text
                 font={Font.Mapo}
                 size="1.8rem"
                 ref={animatedItem4.ref as React.RefObject<HTMLParagraphElement>}
                 style={animatedItem4.style}
               >
-                4. 학교생활 많이 힘들어요?_심수연
+                4. 번아웃과 시 창작_김현아
               </Text>
             </Button>
           </Flex>
