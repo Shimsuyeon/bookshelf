@@ -1,4 +1,5 @@
 import { useMutation, useQuery } from "@tanstack/react-query";
+import toast from "react-hot-toast";
 import { getPosts, postPost } from "src/apis/post-api";
 import Button, { ButtonVariant } from "src/atoms/button/Button";
 import Area from "src/atoms/containers/area/Area";
@@ -35,9 +36,15 @@ const PostBoard = () => {
   const PostPost = useMutation({
     mutationFn: postPost,
     onSuccess: () => {
+      toast.success("등록되었습니다.");
       console.log("success");
+      reset;
     },
   });
+
+  const reset = (e: React.FormEvent<HTMLFormElement>) => {
+    e.currentTarget.reset();
+  };
 
   const formatCreatedAt = (createdAt: string): string => {
     const date = new Date(createdAt);
@@ -60,7 +67,7 @@ const PostBoard = () => {
   };
 
   return (
-    <Area backgroundColor="#fffff0">
+    <Area backgroundColor="#ffffff">
       <Content>
         <Flex justifyContent="center" style={{ padding: "20px" }}>
           <Text font={Font.Mapo} size={"1.5rem"}>
@@ -68,8 +75,12 @@ const PostBoard = () => {
           </Text>
         </Flex>
         <form onSubmit={handleSubmit}>
-          <Flex justifyContent="center">
-            <Button variant={ButtonVariant.postItem} width={"100%"}>
+          <Flex justifyContent="center" width={"100%"}>
+            <Button
+              type={"button"}
+              variant={ButtonVariant.postItem}
+              width={"100%"}
+            >
               <Grid gridTemplateColumns="1fr 1fr 1fr 0.5fr" gap="10px">
                 <InputStyle name={"nickname"} placeholder="닉네임" required />
                 <InputStyle name={"email"} placeholder="이메일" />
@@ -79,7 +90,7 @@ const PostBoard = () => {
                   name={"password"}
                 />
                 <Button
-                  type="submit"
+                  type={"submit"}
                   style={{
                     backgroundColor: "gray",
                     color: "white",
