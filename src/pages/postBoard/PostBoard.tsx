@@ -1,5 +1,4 @@
 import { useMutation, useQuery } from "@tanstack/react-query";
-import { useRef, useState } from "react";
 import { getPosts, postPost } from "src/apis/post-api";
 import Button, { ButtonVariant } from "src/atoms/button/Button";
 import Area from "src/atoms/containers/area/Area";
@@ -51,6 +50,7 @@ const PostBoard = () => {
     const email = e.currentTarget.email.value;
     const password = e.currentTarget.password.value;
     const content = e.currentTarget.feedback.value;
+
     PostPost.mutate({
       name,
       email,

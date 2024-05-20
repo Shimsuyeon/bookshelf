@@ -8,10 +8,12 @@ export const getPosts = async ({ queryKey }: { queryKey: [string] }) => {
   return data;
 };
 
-export const postPost = async (post: PostResponse) => {
-  const { data } = await apiPoster<PostResponse>("/user/post", {
-    method: "POST",
-    data: post,
-  });
+export const postPost = async (props: {
+  name: string;
+  email: string;
+  password: string;
+  content: string;
+}) => {
+  const { data } = await apiPoster<PostResponse>("/user/post", props);
   return data;
 };
