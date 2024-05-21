@@ -1,4 +1,5 @@
 import { useMutation, useQuery } from "@tanstack/react-query";
+import { useRef } from "react";
 import toast from "react-hot-toast";
 import { getPosts, postPost } from "src/apis/post-api";
 import Button, { ButtonVariant } from "src/atoms/button/Button";
@@ -11,6 +12,7 @@ import Text from "src/atoms/text/Text";
 import Font from "src/styles/fonts";
 import QueryKeys from "src/types/query-keys";
 import styled from "styled-components";
+
 const InputStyle = styled.input`
   padding: 10px;
   font-size: 1rem;
@@ -30,29 +32,56 @@ const TextareaStyle = styled.textarea`
 `;
 
 const PostBoard = () => {
-  const { data: info } = useQuery({
+  const { data: info, refetch } = useQuery({
     queryKey: [QueryKeys.post],
     queryFn: getPosts,
   });
+
+  const nameRef = useRef<HTMLInputElement>(null);
+  const emailRef = useRef<HTMLInputElement>(null);
+  const passwordRef = useRef<HTMLInputElement>(null);
+  const contentRef = useRef<HTMLTextAreaElement>(null);
 
   const PostPost = useMutation({
     mutationFn: postPost,
     onSuccess: () => {
       toast.success("등록되었습니다.");
       console.log("success");
-      reset;
+      if (nameRef.current) nameRef.current.value = "";
+      if (emailRef.current) emailRef.current.value = "";
+      if (passwordRef.current) passwordRef.current.value = "";
+      if (contentRef.current) contentRef.current.value = "";
+      refetch();
+    },
+    onError: (error) => {
+      const messages = (error as any).response.data.message;
+      messages.forEach((msg: string) => {
+        if (msg === "name must be longer than or equal to 2 characters") {
+          toast.error("닉네임은 2~20자 사이로 입력해주세요.");
+        } else if (msg === "email must be an email") {
+          toast.error("유효한 이메일 주소를 입력해주세요.");
+        } else if (
+          msg === "password must be longer than or equal to 4 characters"
+        ) {
+          toast.error("비밀번호는 4자 이상이어야 합니다.");
+        } else if (
+          msg === "content must be longer than or equal to 2 characters"
+        ) {
+          toast.error("내용은 2자 이상 입력해주세요.");
+        } else {
+          toast.error("등록에 실패했습니다.");
+        }
+      });
+      console.log("error", error);
     },
   });
-
-  const reset = (e: React.FormEvent<HTMLFormElement>) => {
-    e.currentTarget.reset();
-  };
 
   const formatCreatedAt = (createdAt: string): string => {
     const date = new Date(createdAt);
     const formattedDate = `${date.getFullYear()}년 ${date.getMonth() + 1}월 ${date.getDate()}일 ${date.getHours()}시 ${date.getMinutes()}분`;
     return formattedDate;
   };
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const name = e.currentTarget.nickname.value;
@@ -93,10 +122,20 @@ const PostBoard = () => {
               variant={ButtonVariant.postItem}
               width={"100%"}
             >
-              <Flex>
-                <InputStyle name={"nickname"} placeholder="닉네임" required />
-                <InputStyle name={"email"} placeholder="이메일" />
+              <Flex justifyContent="center">
                 <InputStyle
+                  ref={nameRef}
+                  name={"nickname"}
+                  placeholder="닉네임"
+                  required
+                />
+                <InputStyle
+                  ref={emailRef}
+                  name={"email"}
+                  placeholder="이메일"
+                />
+                <InputStyle
+                  ref={passwordRef}
                   type="password"
                   placeholder="비밀번호"
                   name={"password"}
@@ -118,6 +157,7 @@ const PostBoard = () => {
 
               <Spacer height={"10px"} />
               <TextareaStyle
+                ref={contentRef}
                 placeholder="소감을 남겨주세요."
                 name={"feedback"}
               />
@@ -138,7 +178,7 @@ const PostBoard = () => {
                 <>
                   <Flex key={index} flexDirection="column" width={"100%"}>
                     <Button variant={ButtonVariant.postItem} width={"100%"}>
-                      <Grid gridTemplateColumns="1fr 1fr" gap="10px">
+                      <Flex>
                         <Text font={Font.Mapo} textAlign="left" size={"1.1rem"}>
                           {post.name}님의 한 마디
                         </Text>
@@ -150,7 +190,7 @@ const PostBoard = () => {
                         >
                           {formatCreatedAt(post.createdAt)}
                         </Text>
-                      </Grid>
+                      </Flex>
                       <Spacer height={"10px"} />
                       <Text font={Font.Mapo} textAlign="left">
                         {post.content}
