@@ -37,7 +37,6 @@ export const apiGetter = async <T>(
   path: string,
   params?: any,
 ): Promise<AxiosResponse<T>> => {
-  console.log(import.meta.env.VITE_DOMAIN + path);
   return await interceptor.get(import.meta.env.VITE_DOMAIN + path, { params });
 };
 
