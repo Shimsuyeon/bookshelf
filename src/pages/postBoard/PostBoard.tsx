@@ -23,10 +23,12 @@ const TextareaStyle = styled.textarea`
   padding: 10px;
   font-size: 1rem;
   width: 100%;
+  height: 100px;
   border: none;
   background-color: transparent;
   font-family: MapoGoldenPier;
 `;
+
 const PostBoard = () => {
   const { data: info } = useQuery({
     queryKey: [QueryKeys.post],
@@ -69,19 +71,29 @@ const PostBoard = () => {
   return (
     <Area backgroundColor="#ffffff">
       <Content>
-        <Flex justifyContent="center" style={{ padding: "20px" }}>
+        <Spacer height={"30px"} />
+        <Flex
+          justifyContent="center"
+          alignItems="center"
+          flexDirection="column"
+          style={{ padding: "20px" }}
+        >
           <Text font={Font.Mapo} size={"1.5rem"}>
-            소감 게시판
+            소감 게시판 📝
+          </Text>
+          <Spacer height={"10px"} />
+          <Text font={Font.Mapo} size={"0.8rem"}>
+            * 부적절한 발언이 포함된 글은 통보 없이 삭제될 수 있습니다.
           </Text>
         </Flex>
         <form onSubmit={handleSubmit}>
-          <Flex justifyContent="center" width={"100%"}>
+          <Flex justifyContent="center" width={"100%"} flexDirection="column">
             <Button
               type={"button"}
               variant={ButtonVariant.postItem}
               width={"100%"}
             >
-              <Grid gridTemplateColumns="1fr 1fr 1fr 0.5fr" gap="10px">
+              <Flex>
                 <InputStyle name={"nickname"} placeholder="닉네임" required />
                 <InputStyle name={"email"} placeholder="이메일" />
                 <InputStyle
@@ -91,6 +103,7 @@ const PostBoard = () => {
                 />
                 <Button
                   type={"submit"}
+                  width={"100px"}
                   style={{
                     backgroundColor: "gray",
                     color: "white",
@@ -101,7 +114,7 @@ const PostBoard = () => {
                     등록
                   </Text>
                 </Button>
-              </Grid>
+              </Flex>
 
               <Spacer height={"10px"} />
               <TextareaStyle
@@ -113,17 +126,23 @@ const PostBoard = () => {
         </form>
 
         <Spacer height={"20px"} />
-        <Flex height={"500px"} flexDirection="row">
-          <Grid gridTemplateColumns="1fr">
+        <Flex
+          height={"500px"}
+          flexDirection="row"
+          justifyContent="center"
+          width={"100%"}
+        >
+          <Grid gridTemplateColumns="1fr" style={{ width: "100%" }}>
             {Array.isArray(info) &&
               info.map((post, index) => (
                 <>
-                  <Flex key={index} flexDirection="column">
+                  <Flex key={index} flexDirection="column" width={"100%"}>
                     <Button variant={ButtonVariant.postItem} width={"100%"}>
                       <Grid gridTemplateColumns="1fr 1fr" gap="10px">
                         <Text font={Font.Mapo} textAlign="left" size={"1.1rem"}>
                           {post.name}님의 한 마디
                         </Text>
+
                         <Text
                           font={Font.Mapo}
                           size={"0.8rem"}
@@ -132,6 +151,7 @@ const PostBoard = () => {
                           {formatCreatedAt(post.createdAt)}
                         </Text>
                       </Grid>
+                      <Spacer height={"10px"} />
                       <Text font={Font.Mapo} textAlign="left">
                         {post.content}
                       </Text>
