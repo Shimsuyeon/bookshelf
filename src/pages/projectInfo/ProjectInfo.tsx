@@ -1,5 +1,3 @@
-import { useNavigate } from "react-router-dom";
-import Button from "src/atoms/button/Button";
 import Area from "src/atoms/containers/area/Area";
 import Content from "src/atoms/containers/content/Content";
 import Flex from "src/atoms/containers/flex/Flex";
@@ -8,7 +6,6 @@ import Spacer from "src/atoms/spacer/Spacer";
 import Text from "src/atoms/text/Text";
 import { useScrollFadeIn } from "src/hooks/useScrollFade";
 import Font from "src/styles/fonts";
-import Paths from "src/types/paths";
 
 type ScrollFadeInProps = {
   ref: React.RefObject<HTMLElement>;
@@ -22,7 +19,6 @@ const ProjectInfoPage = () => {
   const animatedItem4: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 3.2);
   const animatedItem5: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 4);
   const animatedItem6: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 4.8);
-  const navigate = useNavigate();
   return (
     <Area backgroundColor="#fffff0">
       <Content>
@@ -114,18 +110,6 @@ const ProjectInfoPage = () => {
           >
             * 문의 사항은 suyeonshim@gm.gist.ac.kr에 남겨주세요.
           </Text>
-          {/* <Button onClick={() => navigate(Paths.booklist)}>
-            <Text
-              font={Font.Mapo}
-              size="1.3rem"
-              color="gray"
-              textAlign="center"
-              ref={animatedItem6.ref as React.RefObject<HTMLParagraphElement>}
-              style={animatedItem6.style}
-            >
-              목록으로 →
-            </Text>
-          </Button> */}
         </Flex>
       </Content>
     </Area>

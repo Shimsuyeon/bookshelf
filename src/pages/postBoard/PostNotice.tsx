@@ -42,7 +42,7 @@ const PostNotice = () => {
         </NoticeItem>
         <NoticeItem>
           이벤트 상품의 정확한 전달을 위해, 실제로 사용 중인 GIST 메일 계정을
-          입력해주세요.
+          입력해주세요. (gm.gist.ac.kr 또는 gist.ac.kr)
         </NoticeItem>
         <NoticeItem>
           부적절한 발언이 포함된 글은 통보 없이 삭제될 수 있습니다.

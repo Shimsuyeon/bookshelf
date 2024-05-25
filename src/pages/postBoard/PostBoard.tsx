@@ -67,9 +67,20 @@ const PostBoard = () => {
         ) {
           toast.error("비밀번호는 4자 이상이어야 합니다.");
         } else if (
-          msg === "content must be longer than or equal to 2 characters"
+          msg === "content must be longer than or equal to 50 characters"
         ) {
-          toast.error("내용은 2자 이상 입력해주세요.");
+          toast.error("내용은 50자 이상 입력해주세요.");
+        } else if (
+          msg === "content must be shorter than or equal to 2000 characters"
+        ) {
+          toast.error("내용은 2000자 이하로 입력해주세요.");
+        } else if (
+          msg ===
+          "Email must be a valid email address from gm.gist.ac.kr or gist.ac.kr domain"
+        ) {
+          toast.error(
+            "이메일 형식은 gm.gist.ac.kr 또는 gist.ac.kr 이어야 합니다.",
+          );
         } else {
           toast.error("등록에 실패했습니다.");
         }
@@ -130,18 +141,18 @@ const PostBoard = () => {
                 <InputStyle
                   ref={nameRef}
                   name={"nickname"}
-                  placeholder="닉네임"
+                  placeholder="별명 또는 이름(2~20자)"
                   required
                 />
                 <InputStyle
                   ref={emailRef}
                   name={"email"}
-                  placeholder="이메일"
+                  placeholder="이메일(gm.gist.ac.kr)"
                 />
                 <InputStyle
                   ref={passwordRef}
                   type="password"
-                  placeholder="비밀번호"
+                  placeholder="비밀번호(4자 이상)"
                   name={"password"}
                 />
                 <Button
@@ -162,7 +173,7 @@ const PostBoard = () => {
               <Spacer height={"10px"} />
               <TextareaStyle
                 ref={contentRef}
-                placeholder="소감을 남겨주세요."
+                placeholder="소감을 남겨주세요. (50자 이상, 2000자 이하)"
                 name={"feedback"}
               />
             </Button>
