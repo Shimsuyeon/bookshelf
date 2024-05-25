@@ -14,17 +14,16 @@ import styled from "styled-components";
 
 const Shelf = styled.div`
   background-color: #f5deb3;
-  height: 5px; // 문자열 제거
-  width: 600px; // 문자열 제거
+  height: 5px;
+  width: 600px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   padding: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-
   @media (max-width: 600px) {
-    width: 100%;
+    width: 400px;
   }
 `;
 
@@ -36,10 +35,23 @@ const SecretBook = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 600px) {
+    width: 100px;
+    height: 150px;
+  }
+`;
+const StyledImage = styled(Image)`
+  width: 150px;
+
+  @media (max-width: 600px) {
+    width: 100px;
+  }
 `;
 const handleSecret = () => {
   toast.error("추후 공개 예정입니다.");
 };
+
 const SecretBookCover = () => {
   return (
     <SecretBook onClick={handleSecret}>
@@ -49,12 +61,6 @@ const SecretBookCover = () => {
     </SecretBook>
   );
 };
-const ResponsiveFlex = styled(Flex)`
-  @media (max-width: 600px) {
-    flex-direction: column;
-    align-items: center;
-  }
-`;
 
 const BookTotalPage = () => {
   const navigate = useNavigate();
@@ -65,29 +71,30 @@ const BookTotalPage = () => {
   return (
     <Area>
       <Content>
-        <ResponsiveFlex flexDirection="column" alignItems="center">
+        <Flex flexDirection="column" alignItems="center">
           <Spacer height="100px" />
           <Text font={Font.Mapo} size="2rem">
             서사의 항해
           </Text>
           <Spacer height="80px" /> {/* 추가된 Spacer */}
-          <ResponsiveFlex justifyContent="center" gap={"30px"}>
-            <Image src={GISTONDO} width="150px" onClick={handleBook} />
+          <Flex justifyContent="center" gap={"30px"}>
+            <StyledImage src={GISTONDO} width="150px" onClick={handleBook} />
             <SecretBookCover />
             <SecretBookCover />
-          </ResponsiveFlex>
+          </Flex>
           <Shelf />
           <Spacer height="50px" />
-          <ResponsiveFlex justifyContent="center" gap={"30px"}>
+          <Flex justifyContent="center" gap={"30px"}>
             <SecretBookCover />
             <SecretBookCover />
             <SecretBookCover />
-          </ResponsiveFlex>
+          </Flex>
           <Shelf />
           <Spacer width="200px" />
-        </ResponsiveFlex>
+        </Flex>
       </Content>
     </Area>
   );
 };
+
 export default BookTotalPage;
