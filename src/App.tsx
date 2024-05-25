@@ -9,6 +9,7 @@ import {
 import BookStoryBurnout from "./pages/bookBurnout/BookStoryBurnout";
 import BookStoryEducation from "./pages/bookEducation/BookStoryRoll";
 import BookInfoPage from "./pages/bookInfo/BookInfoPage";
+import BookJournalPage from "./pages/bookJournal/BookJournalPage";
 import BookListPage from "./pages/bookList/BookList";
 import BookPage from "./pages/books/BookPage";
 import BookStoryRoll from "./pages/bookStory/BookStoryRoll";
@@ -32,6 +33,7 @@ const router = createBrowserRouter(
       <Route path={Paths.projectInfo} element={<ProjectInfoPage />} />,
       <Route path={Paths.bookEdu} element={<BookStoryEducation />} />,
       <Route path={Paths.bookBurnout} element={<BookStoryBurnout />} />,
+      <Route path={Paths.bookJournal} element={<BookJournalPage />} />,
       <Route path={Paths.bookTotal} element={<BookTotalPage />} />,
     </Route>,
   ),

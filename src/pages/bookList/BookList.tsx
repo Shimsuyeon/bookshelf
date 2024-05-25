@@ -24,6 +24,7 @@ const BookListPage = () => {
   const animatedItem3: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 1.3);
   const animatedItem4: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 1.6);
   const animatedItem5: ScrollFadeInProps = useScrollFadeIn("down", 1.7, 0.5);
+  const animatedItem6: ScrollFadeInProps = useScrollFadeIn("down", 1.7, 0.8);
 
   const navigate = useNavigate();
 
@@ -103,6 +104,16 @@ const BookListPage = () => {
                 4. 번아웃과 시 창작_김현아
               </Text>
             </Button>
+            <Button onClick={() => navigate(Paths.bookJournal)}>
+              <Text
+                font={Font.Mapo}
+                size="1.8rem"
+                ref={animatedItem5.ref as React.RefObject<HTMLParagraphElement>}
+                style={animatedItem5.style}
+              >
+                5. 저널리더(Journal-leader)_이은찬
+              </Text>
+            </Button>
           </Flex>
           <Spacer width={"30px"} />
           <Flex
@@ -115,8 +126,8 @@ const BookListPage = () => {
             <Image
               src={Photo}
               width="100%"
-              ref={animatedItem5.ref as React.RefObject<HTMLImageElement>}
-              style={animatedItem5.style}
+              ref={animatedItem6.ref as React.RefObject<HTMLImageElement>}
+              style={animatedItem6.style}
             />
           </Flex>
         </Flex>

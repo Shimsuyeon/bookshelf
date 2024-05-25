@@ -170,12 +170,7 @@ const PostBoard = () => {
         </form>
 
         <Spacer height={"20px"} />
-        <Flex
-          height={"500px"}
-          flexDirection="row"
-          justifyContent="center"
-          width={"100%"}
-        >
+        <Flex flexDirection="row" justifyContent="center" width={"100%"}>
           <Grid gridTemplateColumns="1fr" style={{ width: "100%" }}>
             {Array.isArray(info) &&
               info.map((post, index) => (
@@ -190,7 +185,6 @@ const PostBoard = () => {
                         <Text font={Font.Mapo} textAlign="left" size={"1.1rem"}>
                           {post.name}님의 한 마디
                         </Text>
-
                         <Text
                           font={Font.Mapo}
                           size={"0.8rem"}
@@ -204,13 +198,12 @@ const PostBoard = () => {
                         {post.content}
                       </Text>
                     </Button>
+                    <Spacer height={"20px"} />
                   </Flex>
-                  <Spacer height={"20px"} />
                 </>
               ))}
           </Grid>
         </Flex>
-        <Spacer height={"500px"} />
       </Content>
     </Area>
   );
