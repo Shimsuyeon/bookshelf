@@ -19,16 +19,15 @@ type ScrollFadeInProps = {
 const BookListPage = () => {
   const animatedItem0: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 0);
   const animatedItem001: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 0);
-  const animatedItem01: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 0.3);
-  const animatedItem1: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 0.5);
-  const animatedItem2: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 0.7);
-  const animatedItem3: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 0.9);
-  const animatedItem4: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 1.1);
-  const animatedItem5: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 1.3);
+  const animatedItem1: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 0.3);
+  const animatedItem2: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 0.5);
+  const animatedItem3: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 0.7);
+  const animatedItem4: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 0.9);
+  const animatedItem5: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 1.1);
   const animatedItem6: ScrollFadeInProps = useScrollFadeIn("down", 1.7, 0.5);
-  const animatedItem7: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 1.5);
-  const animatedItem8: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 1.7);
-  const animatedItem9: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 1.9);
+  const animatedItem7: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 1.3);
+  const animatedItem8: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 1.5);
+  const animatedItem9: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 1.7);
 
   const navigate = useNavigate();
 
@@ -62,18 +61,6 @@ const BookListPage = () => {
             >
               * 각 소제목을 클릭해 해당 페이지로 이동할 수 있습니다.
             </Text>
-            {/* <Button onClick={() => navigate(Paths.projectInfo)}>
-              <Text
-                font={Font.Mapo}
-                size="1.8rem"
-                ref={
-                  animatedItem01.ref as React.RefObject<HTMLParagraphElement>
-                }
-                style={animatedItem01.style}
-              >
-                0. 프로젝트 소개
-              </Text>
-            </Button> */}
             <Button onClick={() => navigate(Paths.bookinfo)}>
               <Text
                 font={Font.Mapo}
@@ -180,7 +167,7 @@ const BookListPage = () => {
             />
             <Spacer height={"20px"} />
             <Text font={Font.Mapo} color="gray">
-              소감 작성하고 카페 쿠폰 받기 →
+              소감 작성하고 카페 쿠폰 받기 ↑
             </Text>
             <Text font={Font.Mapo} color="gray">
               (이벤트 기한: 24.05.25.~24.06.01.)

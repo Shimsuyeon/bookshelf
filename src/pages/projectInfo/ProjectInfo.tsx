@@ -13,12 +13,12 @@ type ScrollFadeInProps = {
 };
 const ProjectInfoPage = () => {
   const animatedItem0: ScrollFadeInProps = useScrollFadeIn("down", 1.7, 0);
-  const animatedItem1: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 0.8);
-  const animatedItem2: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 1.6);
-  const animatedItem3: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 2.4);
-  const animatedItem4: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 3.2);
-  const animatedItem5: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 4);
-  const animatedItem6: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 4.8);
+  const animatedItem1: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 0.3);
+  const animatedItem2: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 0.6);
+  const animatedItem3: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 0.9);
+  const animatedItem4: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 1.2);
+  const animatedItem5: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 1.5);
+  const animatedItem6: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 1.8);
   return (
     <Area backgroundColor="#fffff0">
       <Content>

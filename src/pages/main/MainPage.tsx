@@ -67,7 +67,7 @@ const MainPage: React.FC = () => {
                 ref={animatedItem3.ref as React.RefObject<HTMLParagraphElement>}
                 style={animatedItem3.style}
               >
-                책을 클릭해 보세요 →
+                책을 클릭해 보세요 ↑
               </Text>
             </Flex>
           </Flex>
