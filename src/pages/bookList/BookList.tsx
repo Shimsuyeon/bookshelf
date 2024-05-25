@@ -119,7 +119,7 @@ const BookListPage = () => {
             />
           </Flex>
         </Flex>
-        <Spacer height={"2000px"} />
+        <Spacer height={"200px"} />
       </Content>
     </Area>
   );

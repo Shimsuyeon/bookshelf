@@ -29,7 +29,7 @@ const router = createBrowserRouter(
       <Route path={Paths.main} element={<MainPage />} />,
       <Route path={Paths.bookshelf} element={<BookshelfPage />} />,
       <Route path={Paths.books} element={<BookPage />} />,
-      <Route path={Paths.bookdetail} element={<BookDetailPage />} />,
+      {/* <Route path={Paths.bookdetail} element={<BookDetailPage />} />, */}
       <Route path={Paths.firstStory} element={<FirstStoryPage />} />,
       <Route path={Paths.post} element={<PostBoard />} />,
       <Route path={Paths.booklist} element={<BookListPage />} />,

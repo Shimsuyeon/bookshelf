@@ -98,7 +98,7 @@ const PostBoard = () => {
   };
 
   return (
-    <Area backgroundColor="#ffffff">
+    <Area>
       <Content>
         <Spacer height={"30px"} />
         <Flex
@@ -121,6 +121,7 @@ const PostBoard = () => {
               type={"button"}
               variant={ButtonVariant.postItem}
               width={"100%"}
+              style={{ padding: "20px" }}
             >
               <Flex justifyContent="center">
                 <InputStyle
@@ -177,8 +178,12 @@ const PostBoard = () => {
               info.map((post, index) => (
                 <>
                   <Flex key={index} flexDirection="column" width={"100%"}>
-                    <Button variant={ButtonVariant.postItem} width={"100%"}>
-                      <Flex>
+                    <Button
+                      variant={ButtonVariant.postItem}
+                      width={"100%"}
+                      style={{ padding: "30px" }}
+                    >
+                      <Flex justifyContent="space-between" width="100%">
                         <Text font={Font.Mapo} textAlign="left" size={"1.1rem"}>
                           {post.name}님의 한 마디
                         </Text>

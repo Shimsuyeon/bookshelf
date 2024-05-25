@@ -24,32 +24,49 @@ const BookPage = () => {
     <>
       <Area backgroundColor="#fffff0">
         <Content>
+          <Spacer height={"50px"} />
           <Flex
-            style={{
-              zIndex: 2,
-              position: "absolute",
-              left: "50%",
-              top: "100px",
-              width: "100%",
-            }}
+            alignItems="center"
+            justifyContent="center"
+            flexDirection="column"
           >
+            {/* <Flex
+              alignItems="center"
+              justifyContent="center"
+              style={{
+                zIndex: 2,
+                position: "absolute",
+                left: "50%",
+                top: "100px",
+                width: "100%",
+              }}
+            > */}
             <Text
               font={Font.Mapo}
               color={"black"}
               style={{
                 textAlign: "center",
-                fontSize: "25px",
+                fontSize: "1.5rem",
               }}
             >
-              책을 클릭해보세요
+              책을 자유롭게 둘러보세요
             </Text>
-          </Flex>
-          <Flex style={{ zIndex: -1 }}>
+            <Spacer height={"10px"} />
+            <Text
+              font={Font.Mapo}
+              color={"gray"}
+              style={{
+                textAlign: "center",
+                fontSize: "1rem",
+              }}
+            >
+              * 책을 클릭하면 목차로 이동합니다
+            </Text>
+
             <Canvas
               camera={{ position: [-20, 0, 0], fov: 45 }}
               style={{
-                width: "1400px",
-                height: "1080px",
+                height: "800px",
                 backgroundColor: "#fffff0",
               }}
             >

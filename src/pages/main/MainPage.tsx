@@ -29,7 +29,7 @@ const MainPage: React.FC = () => {
       <Area backgroundColor="#fffff0">
         <Content>
           <Spacer height="200px" />
-          <Flex>
+          <Flex alignItems="center" justifyContent="center">
             <Flex flexDirection="column">
               <Spacer height="100px" />
               <Text
@@ -51,7 +51,7 @@ const MainPage: React.FC = () => {
               </Text>
             </Flex>
             <Spacer width="100px" />
-            <Flex>
+            <Flex flexDirection="column" alignItems="center">
               <Image
                 src={BookMain}
                 width="200px"
@@ -59,9 +59,13 @@ const MainPage: React.FC = () => {
                 style={animatedItem2.style}
                 onClick={() => navigate("/books")}
               />
+              <Spacer height="20px" />
+              <Text font={Font.Mapo} color="gray">
+                책을 클릭해 보세요 →
+              </Text>
             </Flex>
           </Flex>
-          <Spacer height="500px" />
+          <Spacer height="200px" />
         </Content>
       </Area>
     </>
