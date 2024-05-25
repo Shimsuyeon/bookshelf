@@ -53,7 +53,40 @@ const Stars = ({ size = 30, style, color = "black" }: IconsProps) => {
   );
 };
 
+const Lock = ({ size = 30, style, color = "gray" }: IconsProps) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      style={style}
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M4.77759 19.3199V12.9138C4.77759 11.903 5.59704 11.0835 6.60789 11.0835H17.5897C18.6006 11.0835 19.42 11.903 19.42 12.9138V19.3199C19.42 20.3307 18.6006 21.1502 17.5897 21.1502H6.60789C5.59704 21.1502 4.77759 20.3307 4.77759 19.3199Z"
+        stroke={color}
+        strokeWidth="1.7"
+        strokeLinecap="round"
+      />
+      <path
+        d="M6.60791 11.0834L6.60791 8.33795C6.60791 5.30541 9.06628 2.84705 12.0988 2.84705V2.84705C15.1314 2.84705 17.5897 5.30541 17.5897 8.33795V11.0834"
+        stroke={color}
+        strokeWidth="1.7"
+        strokeLinecap="round"
+      />
+      <path
+        d="M12 15L12 17"
+        stroke={color}
+        strokeWidth="1.7"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+};
+
 Icons.Quote = Quote;
 Icons.Stars = Stars;
+Icons.Lock = Lock;
 
 export default Icons;

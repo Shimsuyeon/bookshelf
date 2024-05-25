@@ -14,6 +14,7 @@ import Flex from "src/atoms/containers/flex/Flex";
 import Spacer from "src/atoms/spacer/Spacer";
 import Text from "src/atoms/text/Text";
 import Font from "src/styles/fonts";
+import Paths from "src/types/paths";
 import { Mesh, TextureLoader } from "three";
 
 // Extend OrbitControls into @react-three/fiber
@@ -30,17 +31,6 @@ const BookPage = () => {
             justifyContent="center"
             flexDirection="column"
           >
-            {/* <Flex
-              alignItems="center"
-              justifyContent="center"
-              style={{
-                zIndex: 2,
-                position: "absolute",
-                left: "50%",
-                top: "100px",
-                width: "100%",
-              }}
-            > */}
             <Text
               font={Font.Mapo}
               color={"black"}
@@ -94,7 +84,7 @@ const BookMesh = () => {
   const textures = useLoader(TextureLoader, images);
   const navigate = useNavigate();
   const move = () => {
-    navigate("/booklist");
+    navigate(Paths.booklist);
   };
   useFrame(() => {
     if (boxRef.current) {
