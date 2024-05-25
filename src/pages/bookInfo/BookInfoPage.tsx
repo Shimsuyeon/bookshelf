@@ -11,6 +11,7 @@ import { useScrollFadeIn } from "src/hooks/useScrollFade";
 import Font from "src/styles/fonts";
 
 import Cover from "./assets/cover.png";
+import Paths from "src/types/paths";
 type ScrollFadeInProps = {
   ref: React.RefObject<HTMLElement>;
   style: React.CSSProperties;
@@ -100,7 +101,7 @@ const BookInfoPage = () => {
           담아냈습니다.
         </Text>
         <Spacer height={"20px"} />
-        <Button onClick={() => navigate("/booklist")}>
+        <Button onClick={() => navigate(Paths.booklist)}>
           <Text
             font={Font.Mapo}
             size="1.3rem"

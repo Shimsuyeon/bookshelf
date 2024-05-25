@@ -9,6 +9,7 @@ import Font from "src/styles/fonts";
 import styled from "styled-components";
 
 import Edu from "./assets/Edu3.png";
+import Paths from "src/types/paths";
 const SectionContainerCol = styled.div`
   width: 100%;
   min-height: calc(100vh - 64px); // 전체화면시 약 700px?
@@ -78,7 +79,7 @@ const Roll2 = ({ innerRefArr }: Roll1Props) => {
         style={animatedItem[3].style}
       />
       <Spacer height={"100px"} />
-      <Button onClick={() => navigate("/booklist")}>
+      <Button onClick={() => navigate(Paths.booklist)}>
         <Text
           font={Font.Mapo}
           size="1.3rem"

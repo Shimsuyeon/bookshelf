@@ -1,6 +1,5 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import Button from "src/atoms/button/Button";
 import Area from "src/atoms/containers/area/Area";
 import Content from "src/atoms/containers/content/Content";
 import Flex from "src/atoms/containers/flex/Flex";
@@ -9,6 +8,7 @@ import Spacer from "src/atoms/spacer/Spacer";
 import Text from "src/atoms/text/Text";
 import { useScrollFadeIn } from "src/hooks/useScrollFade";
 import Font from "src/styles/fonts";
+import Paths from "src/types/paths";
 
 import BookMain from "./assets/bookMain3.png";
 
@@ -22,6 +22,7 @@ const MainPage: React.FC = () => {
   const animatedItem0: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 0);
   const animatedItem1: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 0.5);
   const animatedItem2: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 1);
+  const animatedItem3: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 1.3);
   const navigate = useNavigate();
 
   return (
@@ -29,7 +30,7 @@ const MainPage: React.FC = () => {
       <Area backgroundColor="#fffff0">
         <Content>
           <Spacer height="200px" />
-          <Flex>
+          <Flex alignItems="center" justifyContent="center">
             <Flex flexDirection="column">
               <Spacer height="100px" />
               <Text
@@ -51,17 +52,26 @@ const MainPage: React.FC = () => {
               </Text>
             </Flex>
             <Spacer width="100px" />
-            <Flex>
+            <Flex flexDirection="column" alignItems="center">
               <Image
                 src={BookMain}
                 width="200px"
                 ref={animatedItem2.ref as React.RefObject<HTMLImageElement>}
                 style={animatedItem2.style}
-                onClick={() => navigate("/books")}
+                onClick={() => navigate(Paths.bookTotal)}
               />
+              <Spacer height="20px" />
+              <Text
+                font={Font.Mapo}
+                color="gray"
+                ref={animatedItem3.ref as React.RefObject<HTMLParagraphElement>}
+                style={animatedItem3.style}
+              >
+                책을 클릭해 보세요 →
+              </Text>
             </Flex>
           </Flex>
-          <Spacer height="500px" />
+          <Spacer height="200px" />
         </Content>
       </Area>
     </>

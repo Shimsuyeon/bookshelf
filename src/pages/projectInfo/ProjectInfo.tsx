@@ -8,6 +8,7 @@ import Spacer from "src/atoms/spacer/Spacer";
 import Text from "src/atoms/text/Text";
 import { useScrollFadeIn } from "src/hooks/useScrollFade";
 import Font from "src/styles/fonts";
+import Paths from "src/types/paths";
 
 type ScrollFadeInProps = {
   ref: React.RefObject<HTMLElement>;
@@ -92,7 +93,7 @@ const ProjectInfoPage = () => {
           style={animatedItem5.style}
         ></Text>
         <Spacer height={"20px"} />
-        <Button onClick={() => navigate("/booklist")}>
+        <Button onClick={() => navigate(Paths.booklist)}>
           <Text
             font={Font.Mapo}
             size="1.3rem"

@@ -5,12 +5,13 @@ enum Paths {
   bookdetail = "/bookdetail",
   firstStory = "/firstStory",
   post = "/post",
-  booklist = "/booklist",
-  bookinfo = "/book/story/info",
-  bookRoll = "/book/story/roll",
-  projectInfo = "/book/story/project",
-  bookEdu = "/book/story/edu",
-  bookBurnout = "/book/story/burnout",
+  booklist = "/book/gistondo",
+  bookinfo = "/book/gistondo/info",
+  bookRoll = "/book/gistondo/roll",
+  projectInfo = "/book/gistondo/project",
+  bookEdu = "/book/gistondo/edu",
+  bookBurnout = "/book/gistondo/burnout",
+  bookTotal = "/book/total",
 }
 
 export default Paths;
