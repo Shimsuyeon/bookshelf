@@ -63,7 +63,7 @@ const ProjectInfoPage = () => {
           >
             이 프로젝트는 소설의 구절을 짧은 글과 그림,
           </Text>
-          <Spacer height={"20px"} />
+          <Spacer height={"30px"} />
           <Text
             font={Font.Mapo}
             textAlign="start"
@@ -73,7 +73,7 @@ const ProjectInfoPage = () => {
           >
             그리고 애니메이션으로 표현했습니다.
           </Text>
-          <Spacer height={"20px"} />
+          <Spacer height={"30px"} />
           <Text
             font={Font.Mapo}
             size={"1.2rem"}
@@ -81,9 +81,10 @@ const ProjectInfoPage = () => {
             ref={animatedItem3.ref as React.RefObject<HTMLParagraphElement>}
             style={animatedItem3.style}
           >
-            책 &apos;지스트의 온도&apos;의 문장을 시각적으로 경험하며,
+            첫 번째 프로젝트, 책 &apos;지스트의 온도&apos;를 시각적으로
+            경험하며,
           </Text>
-          <Spacer height={"20px"} />
+          <Spacer height={"30px"} />
           <Text
             font={Font.Mapo}
             size={"1.2rem"}
@@ -94,15 +95,26 @@ const ProjectInfoPage = () => {
             작가의 의도를 새로운 시선으로 느껴보세요.
           </Text>
 
-          <Spacer height={"20px"} />
+          <Spacer height={"30px"} />
           <Text
             font={Font.Mapo}
             size={"1.2rem"}
             ref={animatedItem5.ref as React.RefObject<HTMLParagraphElement>}
             style={animatedItem5.style}
-          ></Text>
-          <Spacer height={"20px"} />
-          <Button onClick={() => navigate(Paths.booklist)}>
+          >
+            여러분의 다양한 관람 소감을 소감 게시판에 남겨주세요.
+          </Text>
+          <Spacer height={"50px"} />
+          <Text
+            font={Font.Mapo}
+            color="gray"
+            size={"1rem"}
+            ref={animatedItem6.ref as React.RefObject<HTMLParagraphElement>}
+            style={animatedItem6.style}
+          >
+            * 문의 사항은 suyeonshim@gm.gist.ac.kr에 남겨주세요.
+          </Text>
+          {/* <Button onClick={() => navigate(Paths.booklist)}>
             <Text
               font={Font.Mapo}
               size="1.3rem"
@@ -113,7 +125,7 @@ const ProjectInfoPage = () => {
             >
               목록으로 →
             </Text>
-          </Button>
+          </Button> */}
         </Flex>
       </Content>
     </Area>

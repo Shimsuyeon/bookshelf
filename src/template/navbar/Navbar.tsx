@@ -32,6 +32,9 @@ const Navbar = () => {
         <Text font={Font.GmarketSans}>글의 시각화</Text>
       </Button>
       <Flex gap={"20px"}>
+        <Button onClick={() => navigate(Paths.projectInfo)}>
+          <Text font={Font.GmarketSans}>소개</Text>
+        </Button>
         <Button onClick={() => navigate(Paths.bookTotal)}>
           <Text font={Font.GmarketSans}>책장</Text>
         </Button>

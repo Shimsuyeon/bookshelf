@@ -18,6 +18,7 @@ type ScrollFadeInProps = {
 
 const BookListPage = () => {
   const animatedItem0: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 0);
+  const animatedItem001: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 0);
   const animatedItem01: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 0.3);
   const animatedItem1: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 0.5);
   const animatedItem2: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 0.7);
@@ -53,8 +54,15 @@ const BookListPage = () => {
             >
               목차
             </Text>
-            <Spacer height={"20px"} />
-            <Button onClick={() => navigate(Paths.projectInfo)}>
+            <Text
+              font={Font.Mapo}
+              color="gray"
+              ref={animatedItem001.ref as React.RefObject<HTMLParagraphElement>}
+              style={animatedItem001.style}
+            >
+              * 각 소제목을 클릭해 해당 페이지로 이동할 수 있습니다.
+            </Text>
+            {/* <Button onClick={() => navigate(Paths.projectInfo)}>
               <Text
                 font={Font.Mapo}
                 size="1.8rem"
@@ -65,7 +73,7 @@ const BookListPage = () => {
               >
                 0. 프로젝트 소개
               </Text>
-            </Button>
+            </Button> */}
             <Button onClick={() => navigate(Paths.bookinfo)}>
               <Text
                 font={Font.Mapo}
@@ -155,14 +163,22 @@ const BookListPage = () => {
             height="250px"
             alignItems="center"
             justifyContent="center"
+            ref={animatedItem6.ref as React.RefObject<HTMLImageElement>}
+            style={animatedItem6.style}
           >
             <Spacer height={"50px"} />
             <Image
               src={Photo}
               width="100%"
-              ref={animatedItem6.ref as React.RefObject<HTMLImageElement>}
-              style={animatedItem6.style}
+              onClick={() => navigate(Paths.post)}
             />
+            <Spacer height={"20px"} />
+            <Text font={Font.Mapo} color="gray">
+              소감 작성하고 카페 쿠폰 받기 →
+            </Text>
+            <Text font={Font.Mapo} color="gray">
+              (이벤트 기한: 24.05.25.~24.06.01.)
+            </Text>
           </Flex>
         </Flex>
         <Spacer height={"200px"} />
