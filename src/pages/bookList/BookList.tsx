@@ -78,6 +78,7 @@ const BookListPage = () => {
               <Text
                 font={Font.Mapo}
                 size="1.8rem"
+                textAlign="start"
                 ref={animatedItem1.ref as React.RefObject<HTMLParagraphElement>}
                 style={animatedItem1.style}
               >
@@ -88,6 +89,7 @@ const BookListPage = () => {
               <Text
                 font={Font.Mapo}
                 size="1.8rem"
+                textAlign="start"
                 ref={animatedItem2.ref as React.RefObject<HTMLParagraphElement>}
                 style={animatedItem2.style}
               >
@@ -109,6 +111,7 @@ const BookListPage = () => {
               <Text
                 font={Font.Mapo}
                 size="1.8rem"
+                textAlign="start"
                 ref={animatedItem4.ref as React.RefObject<HTMLParagraphElement>}
                 style={animatedItem4.style}
               >
@@ -119,6 +122,7 @@ const BookListPage = () => {
               <Text
                 font={Font.Mapo}
                 size="1.8rem"
+                textAlign="start"
                 ref={animatedItem5.ref as React.RefObject<HTMLParagraphElement>}
                 style={animatedItem5.style}
               >
@@ -129,6 +133,7 @@ const BookListPage = () => {
               <Text
                 font={Font.Mapo}
                 size="1.8rem"
+                textAlign="start"
                 ref={animatedItem7.ref as React.RefObject<HTMLParagraphElement>}
                 style={animatedItem7.style}
               >
@@ -150,6 +155,7 @@ const BookListPage = () => {
               <Text
                 font={Font.Mapo}
                 size="1.8rem"
+                textAlign="start"
                 ref={animatedItem9.ref as React.RefObject<HTMLParagraphElement>}
                 style={animatedItem9.style}
               >
