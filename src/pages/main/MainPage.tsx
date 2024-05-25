@@ -10,7 +10,7 @@ import { useScrollFadeIn } from "src/hooks/useScrollFade";
 import Font from "src/styles/fonts";
 import Paths from "src/types/paths";
 
-import BookMain from "./assets/bookMain3.png";
+import BookMain from "./assets/book.png";
 
 // Assuming you have these types defined somewhere in your project
 type ScrollFadeInProps = {
@@ -51,11 +51,11 @@ const MainPage: React.FC = () => {
                 책은 이를 펴보지 않으면 나무와 같다
               </Text>
             </Flex>
-            <Spacer width="100px" />
+            <Spacer width="30px" />
             <Flex flexDirection="column" alignItems="center">
               <Image
                 src={BookMain}
-                width="200px"
+                width="350px"
                 ref={animatedItem2.ref as React.RefObject<HTMLImageElement>}
                 style={animatedItem2.style}
                 onClick={() => navigate(Paths.bookTotal)}
