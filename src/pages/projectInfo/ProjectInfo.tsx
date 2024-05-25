@@ -61,7 +61,7 @@ const ProjectInfoPage = () => {
             ref={animatedItem1.ref as React.RefObject<HTMLParagraphElement>}
             style={animatedItem1.style}
           >
-            이 프로젝트는 소설의 구절을 짧은 글과 그림,
+            이 프로젝트는 책을 새로운 시선으로 바라보는 디지털 전시관입니다.
           </Text>
           <Spacer height={"30px"} />
           <Text
@@ -71,7 +71,7 @@ const ProjectInfoPage = () => {
             ref={animatedItem2.ref as React.RefObject<HTMLParagraphElement>}
             style={animatedItem2.style}
           >
-            그리고 애니메이션으로 표현했습니다.
+            소설의 구절을 짧은 글과 그림,그리고 애니메이션으로 표현하였습니다.
           </Text>
           <Spacer height={"30px"} />
           <Text
