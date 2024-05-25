@@ -22,6 +22,10 @@ const Shelf = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 `;
 
 const SecretBook = styled.div`
@@ -45,6 +49,13 @@ const SecretBookCover = () => {
     </SecretBook>
   );
 };
+const ResponsiveFlex = styled(Flex)`
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: center;
+  }
+`;
+
 const BookTotalPage = () => {
   const navigate = useNavigate();
   const handleBook = () => {
@@ -54,27 +65,27 @@ const BookTotalPage = () => {
   return (
     <Area>
       <Content>
-        <Flex flexDirection="column" alignItems="center">
+        <ResponsiveFlex flexDirection="column" alignItems="center">
           <Spacer height="100px" />
           <Text font={Font.Mapo} size="2rem">
             서사의 항해
           </Text>
           <Spacer height="80px" /> {/* 추가된 Spacer */}
-          <Flex justifyContent="center" gap={"30px"}>
+          <ResponsiveFlex justifyContent="center" gap={"30px"}>
             <Image src={GISTONDO} width="150px" onClick={handleBook} />
             <SecretBookCover />
             <SecretBookCover />
-          </Flex>
+          </ResponsiveFlex>
           <Shelf />
           <Spacer height="50px" />
-          <Flex justifyContent="center" gap={"30px"}>
+          <ResponsiveFlex justifyContent="center" gap={"30px"}>
             <SecretBookCover />
             <SecretBookCover />
             <SecretBookCover />
-          </Flex>
+          </ResponsiveFlex>
           <Shelf />
           <Spacer width="200px" />
-        </Flex>
+        </ResponsiveFlex>
       </Content>
     </Area>
   );
