@@ -13,6 +13,8 @@ import Font from "src/styles/fonts";
 import QueryKeys from "src/types/query-keys";
 import styled from "styled-components";
 
+import PostNotice from "./PostNotice";
+
 const InputStyle = styled.input`
   padding: 10px;
   font-size: 1rem;
@@ -111,10 +113,11 @@ const PostBoard = () => {
             소감 게시판 📝
           </Text>
           <Spacer height={"10px"} />
-          <Text font={Font.Mapo} size={"0.8rem"}>
-            * 부적절한 발언이 포함된 글은 통보 없이 삭제될 수 있습니다.
-          </Text>
         </Flex>
+        <Flex>
+          <PostNotice />
+        </Flex>
+        <Spacer height={"20px"} />
         <form onSubmit={handleSubmit}>
           <Flex justifyContent="center" width={"100%"} flexDirection="column">
             <Button
