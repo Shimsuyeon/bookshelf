@@ -61,3 +61,8 @@ export interface PostResponse {
   password: string;
   content: string;
 }
+
+export interface deletePostResponse {
+  id: number;
+  password: string;
+}

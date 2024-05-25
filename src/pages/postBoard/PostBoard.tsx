@@ -1,7 +1,7 @@
 import { useMutation, useQuery } from "@tanstack/react-query";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import toast from "react-hot-toast";
-import { getPosts, postPost } from "src/apis/post-api";
+import { deletePost, getPosts, postPost } from "src/apis/post-api"; // Ensure deletePost API is implemented
 import Button, { ButtonVariant } from "src/atoms/button/Button";
 import Area from "src/atoms/containers/area/Area";
 import Content from "src/atoms/containers/content/Content";
@@ -42,11 +42,13 @@ const PostBoard = () => {
   const passwordRef = useRef<HTMLInputElement>(null);
   const contentRef = useRef<HTMLTextAreaElement>(null);
 
+  const [deletePostId, setDeletePostId] = useState<number | null>(null);
+  const deletePasswordRef = useRef<HTMLInputElement>(null);
+
   const PostPost = useMutation({
     mutationFn: postPost,
     onSuccess: () => {
       toast.success("등록되었습니다.");
-      console.log("success");
       if (nameRef.current) nameRef.current.value = "";
       if (emailRef.current) emailRef.current.value = "";
       if (passwordRef.current) passwordRef.current.value = "";
@@ -72,7 +74,19 @@ const PostBoard = () => {
           toast.error("등록에 실패했습니다.");
         }
       });
-      console.log("error", error);
+    },
+  });
+
+  const DeletePost = useMutation({
+    mutationFn: deletePost,
+    onSuccess: () => {
+      toast.success("삭제되었습니다.");
+      setDeletePostId(null);
+      refetch();
+    },
+    onError: (error) => {
+      toast.error("삭제에 실패했습니다.");
+      console.log("delete error", error);
     },
   });
 
@@ -94,6 +108,18 @@ const PostBoard = () => {
       email,
       password,
       content,
+    });
+  };
+
+  const handleDeleteSubmit = (id: number) => {
+    const password = deletePasswordRef.current?.value;
+    if (!password) {
+      toast.error("비밀번호를 입력해주세요.");
+      return;
+    }
+    DeletePost.mutate({
+      id,
+      password,
     });
   };
 
@@ -175,14 +201,13 @@ const PostBoard = () => {
           <Grid gridTemplateColumns="1fr" style={{ width: "100%" }}>
             {Array.isArray(info) &&
               info.map((post, index) => (
-                <>
-                  <Flex key={index} flexDirection="column" width={"100%"}>
+                <div key={index}>
+                  <Flex flexDirection="column" width={"100%"}>
                     <Button variant={ButtonVariant.postItem} width={"100%"}>
-                      <Flex>
+                      <Flex justifyContent="space-between">
                         <Text font={Font.Mapo} textAlign="left" size={"1.1rem"}>
                           {post.name}님의 한 마디
                         </Text>
-
                         <Text
                           font={Font.Mapo}
                           size={"0.8rem"}
@@ -195,10 +220,29 @@ const PostBoard = () => {
                       <Text font={Font.Mapo} textAlign="left">
                         {post.content}
                       </Text>
+                      <Spacer height={"10px"} />
+                      <Button
+                        variant={ButtonVariant.contained}
+                        onClick={() => setDeletePostId(post.id)}
+                      >
+                        삭제
+                      </Button>
+                      {deletePostId === post.id && (
+                        <div>
+                          <InputStyle
+                            ref={deletePasswordRef}
+                            type="password"
+                            placeholder="비밀번호"
+                          />
+                          <Button onClick={() => handleDeleteSubmit(post.id)}>
+                            확인
+                          </Button>
+                        </div>
+                      )}
                     </Button>
                   </Flex>
                   <Spacer height={"20px"} />
-                </>
+                </div>
               ))}
           </Grid>
         </Flex>
