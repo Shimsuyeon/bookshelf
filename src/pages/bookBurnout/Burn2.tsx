@@ -71,10 +71,10 @@ const Burn2 = ({ innerRefArr }: Roll1Props) => {
       >
         그러면 살 수 있을 것 같은 느낌이 들었다.
       </Text>
-      <Spacer height={"50px"} />
+      <Spacer height={"100px"} />
       <Image
         src={Burn}
-        width="200px"
+        width="300px"
         ref={animatedItem[3].ref as React.RefObject<HTMLImageElement>}
         style={animatedItem[3].style}
       />

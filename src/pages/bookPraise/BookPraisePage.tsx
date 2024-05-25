@@ -1,13 +1,12 @@
 import { useRef } from "react";
 import Area from "src/atoms/containers/area/Area";
 import Content from "src/atoms/containers/content/Content";
-import Flex from "src/atoms/containers/flex/Flex";
 import Spacer from "src/atoms/spacer/Spacer";
 
 import Edu0 from "./Roll0";
 import Edu1 from "./Roll1";
 import Edu2 from "./Roll2";
-const BookJournalPage = () => {
+const BookPraisePage = () => {
   const secRefArr = useRef([]);
   return (
     <Area>
@@ -23,4 +22,4 @@ const BookJournalPage = () => {
   );
 };
 
-export default BookJournalPage;
+export default BookPraisePage;

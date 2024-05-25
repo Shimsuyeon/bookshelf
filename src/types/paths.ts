@@ -10,6 +10,9 @@ enum Paths {
   bookBurnout = "/book/gistondo/burnout",
   bookJournal = "/book/gistondo/journal",
   bookTotal = "/book/total",
+  bookTetris = "/book/gistondo/tetris",
+  bookPraise = "/book/gistondo/praise",
+  bookFriend = "/book/gistondo/friend",
 }
 
 export default Paths;

@@ -8,7 +8,7 @@ import { useScrollFadeIn } from "src/hooks/useScrollFade";
 import Font from "src/styles/fonts";
 import styled from "styled-components";
 
-import Roll from "./assets/roll.png";
+import Edu from "./assets/Edu3.png";
 import Paths from "src/types/paths";
 const SectionContainerCol = styled.div`
   width: 100%;
@@ -51,7 +51,8 @@ const Roll2 = ({ innerRefArr }: Roll1Props) => {
         ref={animatedItem[0].ref as React.RefObject<HTMLParagraphElement>}
         style={animatedItem[0].style}
       >
-        아무에게도 해를 끼치지 않고
+        나 자신에게조차 좋은 칭찬을 하지 못하는 사람이 어떻게 남에게 좋은 칭찬을
+        건넬 수 있을까.
       </Text>
       <Spacer height={"50px"} />
       <Text
@@ -60,7 +61,7 @@ const Roll2 = ({ innerRefArr }: Roll1Props) => {
         ref={animatedItem[1].ref as React.RefObject<HTMLParagraphElement>}
         style={animatedItem[1].style}
       >
-        세상을 한 바퀴 뒤집었다 되돌렸다는 것이
+        설사 가능하더라도, 그것은 마음에서 흘러나오는 칭찬이기보다는
       </Text>
       <Spacer height={"50px"} />
       <Text
@@ -69,12 +70,12 @@ const Roll2 = ({ innerRefArr }: Roll1Props) => {
         ref={animatedItem[2].ref as React.RefObject<HTMLParagraphElement>}
         style={animatedItem[2].style}
       >
-        마음에 들었다.
+        마음을 갉아먹으며 나오는 칭찬일 가능성이 크다.
       </Text>
-      <Spacer height={"100px"} />
+      <Spacer height={"50px"} />
       <Image
-        src={Roll}
-        width="350px"
+        src={Edu}
+        width="300px"
         ref={animatedItem[3].ref as React.RefObject<HTMLImageElement>}
         style={animatedItem[3].style}
       />

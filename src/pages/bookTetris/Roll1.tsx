@@ -1,4 +1,3 @@
-import Flex from "src/atoms/containers/flex/Flex";
 import Icons from "src/atoms/icon/Icon";
 import Image from "src/atoms/image/Image";
 import Spacer from "src/atoms/spacer/Spacer";
@@ -7,7 +6,7 @@ import { useScrollFadeIn } from "src/hooks/useScrollFade";
 import Font from "src/styles/fonts";
 import styled from "styled-components";
 
-import Roll2 from "./assets/roll2.png";
+import Edu from "./assets/Edu2.png";
 const SectionContainerCol = styled.div`
   width: 100%;
   min-height: calc(100vh - 64px); // 전체화면시 약 700px?
@@ -25,7 +24,7 @@ type ScrollFadeInProps = {
 interface Roll1Props {
   innerRefArr: React.MutableRefObject<HTMLElement[]>;
 }
-const Roll1 = ({ innerRefArr }: Roll1Props) => {
+const Edu1 = ({ innerRefArr }: Roll1Props) => {
   const animatedItem0: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 0);
   const animatedItem1: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 0.5);
   const animatedItem2: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 1);
@@ -53,7 +52,7 @@ const Roll1 = ({ innerRefArr }: Roll1Props) => {
         ref={animatedItem0.ref as React.RefObject<HTMLParagraphElement>}
         style={animatedItem0.style}
       >
-        무릎을 굽히고 머리를 조아린다.
+        내 대학생활도 저 블록들이 함께 섞여가며 쌓이면서,
       </Text>
       <Spacer height={"50px"} />
       <Text
@@ -62,7 +61,7 @@ const Roll1 = ({ innerRefArr }: Roll1Props) => {
         ref={animatedItem1.ref as React.RefObject<HTMLParagraphElement>}
         style={animatedItem1.style}
       >
-        발을 떼고 구르는 동안 세상도 돈다.
+        각각의 블록들은 다른 블록의 영향을 받기도 한다.
       </Text>
       <Spacer height={"50px"} />
       <Text
@@ -71,17 +70,17 @@ const Roll1 = ({ innerRefArr }: Roll1Props) => {
         ref={animatedItem2.ref as React.RefObject<HTMLParagraphElement>}
         style={animatedItem2.style}
       >
-        나에게 앞구르기는 세상과 교감하는 하나의 방법이다.
+        블록들은 서로 영향을 줄 수 밖에 없다.
       </Text>
-      <Spacer height={"100px"} />
+      <Spacer height={"50px"} />
       <Image
-        src={Roll2}
+        src={Edu}
         width={300}
         ref={animatedItem3.ref as React.RefObject<HTMLImageElement>}
         style={animatedItem3.style}
       />
-      <Spacer height={"100px"} />
+      <Spacer height={"150px"} />
     </SectionContainerCol>
   );
 };
-export default Roll1;
+export default Edu1;

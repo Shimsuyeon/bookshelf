@@ -52,7 +52,7 @@ const Edu0 = ({ innerRefArr }: Roll1Props) => {
           style={animatedItem[0].style}
           textAlign="center"
         >
-          당신이 교육봉사를 해야 하는 이유
+          테트리스
         </Text>
         <Spacer height={"10px"} />
         <div style={{ textAlign: "right", width: "100%" }}>
@@ -66,7 +66,7 @@ const Edu0 = ({ innerRefArr }: Roll1Props) => {
         ref={animatedItem[1].ref as React.RefObject<HTMLParagraphElement>}
         style={animatedItem[1].style}
       >
-        심수연
+        최승규
       </Text>
       <Spacer height={"50px"} />
       <Image

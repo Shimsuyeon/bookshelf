@@ -55,7 +55,7 @@ const Edu1 = ({ innerRefArr }: Roll1Props) => {
       >
         교육봉사와 멘토링을 반복할수록 나는
       </Text>
-      <Spacer height={"20px"} />
+      <Spacer height={"50px"} />
       <Text
         font={Font.Mapo}
         size={"1.2rem"}
@@ -64,7 +64,7 @@ const Edu1 = ({ innerRefArr }: Roll1Props) => {
       >
         멘티에게 배울 점이 많다는 것을
       </Text>
-      <Spacer height={"20px"} />
+      <Spacer height={"50px"} />
       <Text
         font={Font.Mapo}
         size={"1.2rem"}
@@ -73,10 +73,10 @@ const Edu1 = ({ innerRefArr }: Roll1Props) => {
       >
         더 선명하게 느끼게 됐다.
       </Text>
-      <Spacer height={"20px"} />
+      <Spacer height={"100px"} />
       <Image
         src={Edu}
-        width={200}
+        width={300}
         ref={animatedItem3.ref as React.RefObject<HTMLImageElement>}
         style={animatedItem3.style}
       />
