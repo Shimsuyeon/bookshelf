@@ -8,7 +8,7 @@ import { useScrollFadeIn } from "src/hooks/useScrollFade";
 import Font from "src/styles/fonts";
 import styled from "styled-components";
 
-import Roll from "./assets/roll.png";
+import Edu from "./assets/Edu3.png";
 import Paths from "src/types/paths";
 const SectionContainerCol = styled.div`
   width: 100%;
@@ -51,7 +51,7 @@ const Roll2 = ({ innerRefArr }: Roll1Props) => {
         ref={animatedItem[0].ref as React.RefObject<HTMLParagraphElement>}
         style={animatedItem[0].style}
       >
-        아무에게도 해를 끼치지 않고
+        만일 지금 실패하여도 이 경험을 나의 미래를 위해 거름 삼을 수 있고,
       </Text>
       <Spacer height={"50px"} />
       <Text
@@ -60,7 +60,7 @@ const Roll2 = ({ innerRefArr }: Roll1Props) => {
         ref={animatedItem[1].ref as React.RefObject<HTMLParagraphElement>}
         style={animatedItem[1].style}
       >
-        세상을 한 바퀴 뒤집었다 되돌렸다는 것이
+        성공한다면 그만큼의 노하우가 생길 뿐만 아니라
       </Text>
       <Spacer height={"50px"} />
       <Text
@@ -69,12 +69,12 @@ const Roll2 = ({ innerRefArr }: Roll1Props) => {
         ref={animatedItem[2].ref as React.RefObject<HTMLParagraphElement>}
         style={animatedItem[2].style}
       >
-        마음에 들었다.
+        나 자신이 더욱 단단해질 수 있다고 생각한다.
       </Text>
       <Spacer height={"100px"} />
       <Image
-        src={Roll}
-        width="350px"
+        src={Edu}
+        width="300px"
         ref={animatedItem[3].ref as React.RefObject<HTMLImageElement>}
         style={animatedItem[3].style}
       />

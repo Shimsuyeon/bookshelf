@@ -54,7 +54,7 @@ const Burn1 = ({ innerRefArr }: Roll1Props) => {
       >
         두 학기 동안 나는 &apos;잠이 드는 것&apos;을 무서워했다.
       </Text>
-      <Spacer height={"20px"} />
+      <Spacer height={"50px"} />
       <Text
         font={Font.Mapo}
         size={"1.2rem"}
@@ -63,7 +63,7 @@ const Burn1 = ({ innerRefArr }: Roll1Props) => {
       >
         잠드는 게 무서워 잠을 잘 자지 못하다보니 하루 종일 피곤했고
       </Text>
-      <Spacer height={"20px"} />
+      <Spacer height={"50px"} />
       <Text
         font={Font.Mapo}
         size={"1.2rem"}
@@ -72,10 +72,10 @@ const Burn1 = ({ innerRefArr }: Roll1Props) => {
       >
         피로를 이겨내려 카페인 음료를 최소 두 잔씩 마셨다.
       </Text>
-      <Spacer height={"20px"} />
+      <Spacer height={"100px"} />
       <Image
         src={Burn}
-        width={200}
+        width={300}
         ref={animatedItem3.ref as React.RefObject<HTMLImageElement>}
         style={animatedItem3.style}
       />

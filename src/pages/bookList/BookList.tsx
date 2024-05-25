@@ -18,12 +18,17 @@ type ScrollFadeInProps = {
 
 const BookListPage = () => {
   const animatedItem0: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 0);
+  const animatedItem001: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 0);
   const animatedItem01: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 0.3);
   const animatedItem1: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 0.5);
-  const animatedItem2: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 1);
-  const animatedItem3: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 1.3);
-  const animatedItem4: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 1.6);
-  const animatedItem5: ScrollFadeInProps = useScrollFadeIn("down", 1.7, 0.5);
+  const animatedItem2: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 0.7);
+  const animatedItem3: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 0.9);
+  const animatedItem4: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 1.1);
+  const animatedItem5: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 1.3);
+  const animatedItem6: ScrollFadeInProps = useScrollFadeIn("down", 1.7, 0.5);
+  const animatedItem7: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 1.5);
+  const animatedItem8: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 1.7);
+  const animatedItem9: ScrollFadeInProps = useScrollFadeIn("up", 1.7, 1.9);
 
   const navigate = useNavigate();
 
@@ -49,8 +54,15 @@ const BookListPage = () => {
             >
               목차
             </Text>
-            <Spacer height={"20px"} />
-            <Button onClick={() => navigate(Paths.projectInfo)}>
+            <Text
+              font={Font.Mapo}
+              color="gray"
+              ref={animatedItem001.ref as React.RefObject<HTMLParagraphElement>}
+              style={animatedItem001.style}
+            >
+              * 각 소제목을 클릭해 해당 페이지로 이동할 수 있습니다.
+            </Text>
+            {/* <Button onClick={() => navigate(Paths.projectInfo)}>
               <Text
                 font={Font.Mapo}
                 size="1.8rem"
@@ -61,7 +73,7 @@ const BookListPage = () => {
               >
                 0. 프로젝트 소개
               </Text>
-            </Button>
+            </Button> */}
             <Button onClick={() => navigate(Paths.bookinfo)}>
               <Text
                 font={Font.Mapo}
@@ -103,6 +115,47 @@ const BookListPage = () => {
                 4. 번아웃과 시 창작_김현아
               </Text>
             </Button>
+            <Button onClick={() => navigate(Paths.bookJournal)}>
+              <Text
+                font={Font.Mapo}
+                size="1.8rem"
+                ref={animatedItem5.ref as React.RefObject<HTMLParagraphElement>}
+                style={animatedItem5.style}
+              >
+                5. 저널리더(Journal-leader)_이은찬
+              </Text>
+            </Button>
+            <Button onClick={() => navigate(Paths.bookTetris)}>
+              <Text
+                font={Font.Mapo}
+                size="1.8rem"
+                ref={animatedItem7.ref as React.RefObject<HTMLParagraphElement>}
+                style={animatedItem7.style}
+              >
+                6. 테트리스_최승규
+              </Text>
+            </Button>
+            <Button onClick={() => navigate(Paths.bookPraise)}>
+              <Text
+                font={Font.Mapo}
+                textAlign="start"
+                size="1.8rem"
+                ref={animatedItem8.ref as React.RefObject<HTMLParagraphElement>}
+                style={animatedItem8.style}
+              >
+                7. 좋은 칭찬은 좋은 비판보다 어려우니_이수민
+              </Text>
+            </Button>
+            <Button onClick={() => navigate(Paths.bookFriend)}>
+              <Text
+                font={Font.Mapo}
+                size="1.8rem"
+                ref={animatedItem9.ref as React.RefObject<HTMLParagraphElement>}
+                style={animatedItem9.style}
+              >
+                8. 친구의 의미_윤세림
+              </Text>
+            </Button>
           </Flex>
           <Spacer width={"30px"} />
           <Flex
@@ -110,14 +163,22 @@ const BookListPage = () => {
             height="250px"
             alignItems="center"
             justifyContent="center"
+            ref={animatedItem6.ref as React.RefObject<HTMLImageElement>}
+            style={animatedItem6.style}
           >
             <Spacer height={"50px"} />
             <Image
               src={Photo}
               width="100%"
-              ref={animatedItem5.ref as React.RefObject<HTMLImageElement>}
-              style={animatedItem5.style}
+              onClick={() => navigate(Paths.post)}
             />
+            <Spacer height={"20px"} />
+            <Text font={Font.Mapo} color="gray">
+              소감 작성하고 카페 쿠폰 받기 →
+            </Text>
+            <Text font={Font.Mapo} color="gray">
+              (이벤트 기한: 24.05.25.~24.06.01.)
+            </Text>
           </Flex>
         </Flex>
         <Spacer height={"200px"} />

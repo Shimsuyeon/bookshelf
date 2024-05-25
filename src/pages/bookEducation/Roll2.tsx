@@ -71,10 +71,10 @@ const Roll2 = ({ innerRefArr }: Roll1Props) => {
       >
         나는 모두에게 교육봉사 참여를 권하고 싶다.
       </Text>
-      <Spacer height={"50px"} />
+      <Spacer height={"100px"} />
       <Image
         src={Edu}
-        width="200px"
+        width="300px"
         ref={animatedItem[3].ref as React.RefObject<HTMLImageElement>}
         style={animatedItem[3].style}
       />

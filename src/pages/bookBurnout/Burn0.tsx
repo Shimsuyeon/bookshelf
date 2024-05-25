@@ -71,7 +71,7 @@ const Edu0 = ({ innerRefArr }: Roll1Props) => {
       <Spacer height={"50px"} />
       <Image
         src={Burn}
-        width={250}
+        width={400}
         ref={animatedItem[2].ref as React.RefObject<HTMLImageElement>}
         style={animatedItem[2].style}
       />

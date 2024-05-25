@@ -7,16 +7,16 @@ import {
 } from "react-router-dom";
 
 import BookStoryBurnout from "./pages/bookBurnout/BookStoryBurnout";
-//import path from "path";
-import BookDetailPage from "./pages/bookDetail/BookDetailPage";
 import BookStoryEducation from "./pages/bookEducation/BookStoryRoll";
+import BookFriendPage from "./pages/bookFriend/BookFriendPage";
 import BookInfoPage from "./pages/bookInfo/BookInfoPage";
+import BookJournalPage from "./pages/bookJournal/BookJournalPage";
 import BookListPage from "./pages/bookList/BookList";
+import BookPraisePage from "./pages/bookPraise/BookPraisePage";
 import BookPage from "./pages/books/BookPage";
-import BookshelfPage from "./pages/bookshelf/BookshelfPage";
 import BookStoryRoll from "./pages/bookStory/BookStoryRoll";
+import BookTetrisPage from "./pages/bookTetris/BookTetrisPage";
 import BookTotalPage from "./pages/bookTotal/BookTotalPage";
-import FirstStoryPage from "./pages/firstStory/FirstStoryPage";
 import MainPage from "./pages/main/MainPage";
 import PostBoard from "./pages/postBoard/PostBoard";
 import ProjectInfoPage from "./pages/projectInfo/ProjectInfo";
@@ -28,10 +28,7 @@ const router = createBrowserRouter(
     <Route element={<Layout />}>
       <Route path="*" element={<Navigate to={Paths.main} replace />} />,
       <Route path={Paths.main} element={<MainPage />} />,
-      <Route path={Paths.bookshelf} element={<BookshelfPage />} />,
       <Route path={Paths.books} element={<BookPage />} />,
-      {/* <Route path={Paths.bookdetail} element={<BookDetailPage />} />, */}
-      <Route path={Paths.firstStory} element={<FirstStoryPage />} />,
       <Route path={Paths.post} element={<PostBoard />} />,
       <Route path={Paths.booklist} element={<BookListPage />} />,
       <Route path={Paths.bookinfo} element={<BookInfoPage />} />,
@@ -39,7 +36,11 @@ const router = createBrowserRouter(
       <Route path={Paths.projectInfo} element={<ProjectInfoPage />} />,
       <Route path={Paths.bookEdu} element={<BookStoryEducation />} />,
       <Route path={Paths.bookBurnout} element={<BookStoryBurnout />} />,
+      <Route path={Paths.bookJournal} element={<BookJournalPage />} />,
+      <Route path={Paths.bookTetris} element={<BookTetrisPage />} />,
       <Route path={Paths.bookTotal} element={<BookTotalPage />} />,
+      <Route path={Paths.bookPraise} element={<BookPraisePage />} />,
+      <Route path={Paths.bookFriend} element={<BookFriendPage />} />,
     </Route>,
   ),
 );
