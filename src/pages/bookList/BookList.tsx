@@ -34,7 +34,7 @@ const BookListPage = () => {
     <Area backgroundColor="#fffff0">
       <Content>
         <Spacer height={"200px"} />
-        <Flex>
+        <Flex alignItems="center" justifyContent="center">
           <Flex
             flexDirection="column"
             gap="20px"
@@ -88,6 +88,7 @@ const BookListPage = () => {
                 size="1.8rem"
                 ref={animatedItem3.ref as React.RefObject<HTMLParagraphElement>}
                 style={animatedItem3.style}
+                textAlign="start"
               >
                 3. 당신이 교육봉사를 해야 하는 이유_심수연
               </Text>
@@ -103,7 +104,7 @@ const BookListPage = () => {
               </Text>
             </Button>
           </Flex>
-          <Spacer width={"20px"} />
+          <Spacer width={"30px"} />
           <Flex
             width="250px"
             height="250px"
