@@ -60,7 +60,7 @@ const Roll2 = ({ innerRefArr }: Roll1Props) => {
         ref={animatedItem[1].ref as React.RefObject<HTMLParagraphElement>}
         style={animatedItem[1].style}
       >
-        로에게 선한 영향을 주고 성장해 나가는 좋은 계기이다.
+        서로에게 선한 영향을 주고 성장해 나가는 좋은 계기이다.
       </Text>
       <Spacer height={"50px"} />
       <Text
