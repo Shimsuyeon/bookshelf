@@ -1,5 +1,3 @@
-# GIST Infoteam Frontend Template
-
 ## 구성 요소
 
 ### React
@@ -97,10 +95,6 @@ degit은 Git 저장소에서 커밋 기록을 제외한 나머지를 쉽게 다�
 ```shell
 degit https://github.com/gsainfoteam/Infoteam-frontend-template.git <프로젝트 이름>
 ```
-
-### Github Template
-
-이 프로젝트는 깃헙 템플릿 저장소로 만들어져 있기 때문에, 다른 프로젝트를 만드는 템플릿으로 활용이 가능합니다. 저장소 주소 옆에, `Use this template`을 클릭하고 `Create a new repository`를 클릭합시다.
 
 ## 실행하기
 
